@@ -4,8 +4,8 @@ require_once '../MODEL/User_Juridico.php';
 require_once '../MODEL/Endereco.php';
 require_once '../MODEL/Contato.php';
 require_once '../DAO/EmpresaDAO.php';
-require_once '../DAO/EnderecoDao_Empresa.php';
-require_once '../DAO/ContatoDao_Empresa.php';
+require_once '../DAO/EnderecoDao.php';
+require_once '../DAO/ContatoDao.php';
 
 
 class ObterEmpresa {
@@ -53,7 +53,7 @@ $end->setEstado($estado);
 $end->setCidade($cidade);
 $end ->setCep($cep);
 
-$enviar = new EnderecoDao_Empresa();
+$enviar = new EnderecoDao();
 $enviar->Insere($end);
 }
 
@@ -71,7 +71,7 @@ $con ->setResidencial($residencial);
 $con ->setCelular($celular);
 $con->setLinkedin($linkedin);
 
-$enviar = new ContatoDao_Empresa();
+$enviar = new ContatoDao();
 $enviar->Insere($con);
 
 }
@@ -83,7 +83,6 @@ $executar = new ObterEmpresa();
 echo $executar ->ObterEmpresa_Dados();
 echo $executar ->ObterEmpresa_Endereco();
 echo $executar ->ObterEmpresa_Contato();
-header("Location: ../VIEW/Main_empregador.html");
 
 
 

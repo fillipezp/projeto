@@ -22,10 +22,8 @@ try {
                        ':og_exped_uf'  =>$dados->getOg_exped_uf(),
                        ':sexo'         =>$dados->getSexo(),
                        ':nome_completo'=>$dados->getNome_completo(),
-		       ':rg'=>$dados->getRg()
+					   ':rg'=>$dados->getRg()
                        ));  
-  
-   
 } catch(PDOException $e) {
   echo 'Error: ' . $e->getMessage();
      

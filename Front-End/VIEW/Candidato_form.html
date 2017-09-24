@@ -1,91 +1,165 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<title>CADASTRO JURÍDICO</title>
-<link href="STYLE/formularios.css" rel="stylesheet">
-</head>
-
-	<body>
-
-	<div id='cssmenu'>
-<ul>
-    <li class='active'><a href="Main_empregador.html">PRINCIPAL</a></li>
-   
+    <head>
+      
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-</ul>
-</div>
+        <title>CADASTRO DO CANDIDATO</title>
+<link href="STYLE/formularios.css" rel="stylesheet">
+    </head>
+      
+    <body>
+     
+	<div id='cssmenu'>
+	<ul>
+            <li class='active'><a href='Main_candidato.html'>PRINCIPAL</a></li>
+            
+            
+    </ul>
+    </div>
+            
+                     
+        <form action='../CONTROL/Obter_Candidato.php' method="post">
 
-                
-            <form action="../CONTROL/Obter_Empresa.php" method="post">
-
-			<fieldset>
-				<legend>Dados Jurídicos </legend>
-				<table cellspacing="10">
+	<fieldset>
+                <legend>Dados Pessoais</legend>
+			<table cellspacing="10">
 				<tr>
 				<td width="121">
-				
-				<label > Razão Social: </label>
+				<label > Nome completo: </label>
 				</td>
 				<td width="300" align="left">
-				<input  size="50" type="text" name="razao_social">
+			    <input placeholder="Nome" size="50" type="text" name="nome_candidato">
 				</td>
-   
-   
+				
+				
 				<td>
-				<label> Nome Fantasia </label>
+				<label> Sexo </label>
 				</td>
 				<td>
-				<input placeholder="Nome" size="50" type="text" name="nfantasia">
+				<select name="sexo" >
+				<option value="Masculino">Masculino</option>
+				<option value="Feminino">Feminino</option>
+				</select>
 				</td>
 				</tr>
   
   
+  
+  
+				<tr>
+				<td>
+				<label>Data de nascimento: </label>
+				</td>
+				<td align="left">
+				<input type="text" name="dia" size="2" maxlength="2" placeholder="dd"> 
+				<input type="text" name="mes" size="2" maxlength="2" placeholder="mm"> 
+				<input type="text" name="ano" size="4" maxlength="4" placeholder="aaaa">
+				</td>
+   
+   
+   
+   
+   
+				<td>
+				<label> Estado Civil: </label>
+				</td>
+				<td>
+				
+				<select name="estado_civil">
+				<option value="solteiro(a)"> Solteiro(a)</option>
+				<option value="casado(a)">Casado(a)</option>
+				<option value="viuvo(a)">Viúvo(a) </option>
+				<option value="divorciado(a)">Divorciado(a) </option>
+				</select>
+				
+				</td>
+				</tr>
+  
+  
+  
+  
+  
+  
+				<tr>
+				<td>
+				<label> RG: </label>
+				</td>
+				<td align="left">
+				<input placeholder="RG" type="text" name="rg" size="13" maxlength="13">
+				</td>
+  
+  
+  
+  
+  
+    
+				<td> Data de expedição: </td> 
+				<td align="left">
+				<input type="text" name="dia2" size="2" maxlength="2" placeholder='dd' />
+				<input type="text" name="mes2" size="2" maxlength="2" placeholder = 'mm' /> 
+				<input type="text" name="ano2" size="4" maxlength="4" placeholder ='aaaa' />
+				</td> 
+				</tr>
 
-   
-   
-				<td>
-				<label> Inscrição Estadual: </label>
-				</td>
-				<td>
-				<input placeholder="Inscrição estadual" type="text"  name="inscric">
-				</td>
-				</tr>
-				
-				
-				
+
+ 
+ 
  
 				<tr>
 				<td>
-				<label> CNPJ: </label>
+				<label>CPF:</label>
 				</td>
 				<td align="left">
-				<input placeholder="CNPJ" type="text" name="cnpj" size="13" maxlength="13">
+				<input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
 				</td>
-  
-  
-  
-  
-  
-				<tr>
+ 
+                                    
+                                    
 				<td>
-				<label>Ramo:</label>
+				<label> Orgão expedidor</label>
 				</td>
-				<td align="left">
-				<input type="text" name="ramo" size="50" maxlength="50"> 
+				<td>
+				
+				<select name="og_expedidor">
+				<option value="nulo"></option>
+				<option value="ifp"> IFP</option>
+				<option value="ipf">IPF</option>
+				<option value="ssp">SSP </option>
+				<option value="ma">MA </option>
+				<option value="mm">MM</option>
+				<option value="mt">MT </option>
+				<option value="oab">OAB </option>
+				<option value="crea">CREA</option>
+				<option value="crm">CRM </option>
+				<option value="cra">CRA </option>
+				<option value="me">ME </option>
+				<option value="cbm">CBM</option>
+				<option value="cro">CRO </option>
+				<option value="crf">CRF </option>
+				</select>
+				
 				</td>
 				</tr>
+				</table>
  
-		</table>
+ 
+ 
+ <!--FIM DO FIELDSET DE DADOS PESSOAIS-->
 </fieldset>
-
-
-
 <br />
-<!-- ENDEREÇO -->
+
+
+
+
+
+
+
+<!--INICIO DO FIELDSET DE ENDEREÇO-->
 <fieldset>
+
+
+
 				<legend>Dados de Endereço</legend>
 				<table cellspacing="10">
 
@@ -96,6 +170,7 @@
 				<td align="left">
 				<input type="text" name="logradouro">
 				</td>
+				
 				
 				
 				
@@ -112,8 +187,6 @@
   
   
   
-  
-  
 				<tr>
 				<td>
 				<label for="bairro">Bairro: </label>
@@ -125,14 +198,8 @@
 				
 				
 				
-				
-				
-				
-				
-				
-				
 				<td>
-				<label> Complemento</label>
+				<label> Complemento: </label>
 				</td>
 				<td>
 				<input type="text" name="complemento" />
@@ -142,23 +209,12 @@
 				
 				
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				<tr>
 				<td>
-				<label name="estado" for="estado">Estado:</label>
+				<label for="estado">Estado:</label>
 				</td>
 				<td align="left">
 				<select name="estado"> 
-				<option value=""></option> 
 				<option value="ac">Acre</option> 
 				<option value="al">Alagoas</option> 
 				<option value="am">Amazonas</option> 
@@ -194,6 +250,8 @@
 				
 				
 				
+				
+				
 				<tr>
 				<td>
 				<label for="cidade">Cidade: </label>
@@ -202,8 +260,6 @@
 				<input type="text" name="cidade">
 				</td>
 				</tr>
-				
-				
 				
 				
 				
@@ -218,12 +274,21 @@
 				</td>
 				</tr>
 				
-	   			
- </table>
-                                
-                                
+				</table>
+			
+			
+<!--FIM DO FIELDSET DE ENDEREÇO-->			
 </fieldset>
- <br /><br /> 
+	<br />
+
+
+
+	
+	
+	
+
+<!-- CONTATO -->
+<!--INICIO DO FIELDSET DE CONTATO-->
 
 			<fieldset>
 				<legend>Contato </legend>
@@ -261,17 +326,17 @@
 </fieldset>
 
 
- <br /><br /> 
-    
+<br />
+
 <center>
 <input type="submit" value="Cadastrar">
 <input type="reset" value="Limpar">
-    </center>
+</center>
 </form>
 
-           
-    
 
+
+        
 <!--RODAPÉ DO SITE-->
 <div id="footer">
 <center>
@@ -279,12 +344,12 @@
 </center>
 </div>
  
- 
- 
 
-</body>
- 
- 
+
+
+    </body>
+    
+    
 </html>
 
 

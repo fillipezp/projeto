@@ -3,8 +3,8 @@ require_once '../MODEL/User_Candidato.php';
 require_once '../MODEL/Endereco.php';
 require_once '../MODEL/Contato.php';
 require_once '../DAO/CandidatoDao.php';
-require_once '../DAO/EnderecoDao_Candidato.php';
-require_once '../DAO/ContatoDao_Candidato.php';
+require_once '../DAO/EnderecoDao.php';
+require_once '../DAO/ContatoDao.php';
 
 
 class ObterCandidato {
@@ -14,11 +14,11 @@ $candidato = new candidato();
 
 $nome_candidato = $_POST['nome_candidato'];
 $sexo = $_POST['sexo'];	
-$dtnascimento = $_POST['dia'] || '/' || $_POST['mes'] || '/' ||$_POST['ano'];		
+$dtnascimento = $_POST['dia'];	
 $estado_civil = $_POST['estado_civil'];	
 $rg = $_POST ['rg'];	
-$dt_expedicao = $_POST['dia2'] || '/' ||$_POST['mes2']|| '/' || $_POST['ano2'] ;		
-$cpf = $_POST ['cep'] || '-' || $_POST['cep2'];
+$dt_expedicao = $_POST['dia2'];		
+$cpf = $_POST ['cep'];
 $og_expedidor = $_POST['og_expedidor'];
 
 $candidato->setNome_completo($nome_candidato);
@@ -58,7 +58,7 @@ $end->setEstado($estado);
 $end->setCidade($cidade);
 $end ->setCep($cep);
 
-$enviar = new EnderecoDao_Candidato();
+$enviar = new EnderecoDao();
 $enviar->Insere($end);
 }
 
@@ -76,7 +76,7 @@ $con ->setResidencial($residencial);
 $con ->setCelular($celular);
 $con->setLinkedin($linkedin);
 
-$enviar = new ContatoDao_Candidato();
+$enviar = new ContatoDao();
 $enviar->Insere($con);
 
 }
@@ -88,7 +88,7 @@ $executar = new ObterCandidato();
 echo $executar ->ObterCandidato_Dados();
 echo $executar ->ObterCandidato_Endereco();
 echo $executar ->ObterCandidato_Contato();
- header("Location: ../VIEW/Main_Candidato.html");
+
 
 
 

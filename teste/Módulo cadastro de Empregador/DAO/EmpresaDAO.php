@@ -2,7 +2,7 @@
         require_once 'ConexaoDao.php';
 	require_once '../CONTROL/Obter_Empresa.php';
         require_once '../MODEL/User_Juridico.php';
-      
+        require_once '../MODEL/Endereco.php';
    
 	
 class EmpresaDAO extends Connect {

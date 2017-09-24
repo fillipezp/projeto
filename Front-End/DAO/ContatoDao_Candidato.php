@@ -1,13 +1,11 @@
 <?php
         require_once 'ConexaoDao.php';
-	require_once '../CONTROL/Obter_Empresa.php';
+//	require_once '../CONTROL/Obter_Empresa.php';
+        require_once '../CONTROL/Obter_Candidato.php';
         require_once '../MODEL/Contato.php';
    
       
-class ContatoDao extends Connect {
-         
-   
-    
+class ContatoDao_Candidato extends Connect {
     
   
  public function Insere(CONTATO $dados ){
