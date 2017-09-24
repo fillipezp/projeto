@@ -19,6 +19,7 @@
 </ul>
 </div>
 
+                
             <form action="../CONTROL/Obter_Empresa.php" method="post">
 
 			<fieldset>
@@ -43,20 +44,7 @@
 				</tr>
   
   
-  
-  
-  
-  
-				<tr>
-				<td>
-				<label>Data de fundação: </label>
-				</td>
-				<td align="left">
-				<input type="text" name="dia" size="2" maxlength="2" placeholder="dd"> 
-				<input type="text" name="mes" size="2" maxlength="2" placeholder="mm"> 
-				<input type="text" name="ano" size="4" maxlength="4" placeholder="aaaa">
-				</td>
-   
+
    
    
 				<td>
@@ -171,6 +159,7 @@
 				</td>
 				<td align="left">
 				<select name="estado"> 
+				<option value=""></option> 
 				<option value="ac">Acre</option> 
 				<option value="al">Alagoas</option> 
 				<option value="am">Amazonas</option> 
@@ -230,15 +219,55 @@
 				</td>
 				</tr>
 				
-				
+	   			
  </table>
+                                
+                                
 </fieldset>
-<br /><br />
+ <br /><br /> 
+
+			<fieldset>
+				<legend>Contato </legend>
+				<table cellspacing="10">
+				<tr>
+				<td width="121">
+				
+				<label > Telefone principal: </label>
+				</td>
+				<td width="300" align="left">
+				<input  size="50" type="text" name="telefone">
+				</td>
+   
+   
+				<td>
+				<label> Celular </label>
+				</td>
+				<td>
+				<input size="50" type="text" name="celular">
+				</td>
+                                    
+                                    
+                                 <td>
+				<label> Linkedin </label>
+				</td>
+				<td>
+				<input  size="50" type="text" name="linkedin">
+				</td>   
+				</tr>
 
 
 
+
+                                </table>                     
+</fieldset>
+
+
+ <br /><br /> 
+    
+<center>
 <input type="submit" value="Cadastrar">
 <input type="reset" value="Limpar">
+    </center>
 </form>
 
            

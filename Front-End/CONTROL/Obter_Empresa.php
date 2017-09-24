@@ -8,9 +8,6 @@ require_once '../DAO/EnderecoDao.php';
 require_once '../DAO/ContatoDao.php';
 
 
-
-
-
 class ObterEmpresa {	  
   
 public function ObterEmpresa_Dados() {
@@ -36,6 +33,7 @@ $empresadao->Insere($empresa);
 
 
 
+
 public function ObterEmpresa_Endereco(){
 
 $end = new ENDERECO();
@@ -44,12 +42,16 @@ $logradouro = $_POST['logradouro'];
 $numero = $_POST['numero'];
 $bairro = $_POST ['bairro'];
 $complemento = $_POST ['complemento'];
-$cep = $_POST ['cep'] || '-' || $_POST['cep2'];
+$estado = $_POST ['estado'];
+$cidade = $_POST ['cidade'];
+$cep = $_POST ['cep']|| '-' || $_POST['cep2'];;
 
 $end->setLogradouro($logradouro);
 $end ->setNumero($numero);
 $end->setBairro($bairro);
 $end->setComplemento($complemento);
+$end->setEstado($estado);
+$end->setCidade($cidade);
 $end ->setCep($cep);
 
 $enviar = new EnderecoDao();
@@ -58,11 +60,11 @@ $enviar->Insere($end);
 
 
 
-public function ObterEmpresa_Contato(){
 
- $con = new Contato();
+public function ObterEmpresa_Contato(){
+$con = new Contato();
  	
-$residencial = $_POST['residencial'];
+$residencial = $_POST['telefone'];
 $celular = $_POST['celular'];
 $linkedin = $_POST ['linkedin'];
 
@@ -81,7 +83,10 @@ $executar = new ObterEmpresa();
 
 echo $executar ->ObterEmpresa_Dados();
 echo $executar ->ObterEmpresa_Endereco();
-//echo $executar ->ObterEmpresa_Contato();
+echo $executar ->ObterEmpresa_Contato();
+header("Location: ../VIEW/Empresa_form.html");
+
+
 
 
 

@@ -19,7 +19,9 @@ try {
                         ':cnpj'      => $dados->getCnpj(),
                          ':ie'       => $dados->getIe(),  
                          ':razao'    => $dados->getRazao_social(), 
-                         ':ramo'     => $dados->getRamo()));                  
+                         ':ramo'     => $dados->getRamo()));  
+  
+  
 } catch(PDOException $e) {
   echo 'Error: ' . $e->getMessage();
      

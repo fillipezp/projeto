@@ -6,8 +6,10 @@
       
 class ContatoDao extends Connect {
          
+   
     
     
+  
  public function Insere(CONTATO $dados ){
      
 try { 
@@ -15,15 +17,19 @@ try {
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-  $stmt = $pdo->prepare('INSERT INTO CONTATO(celular,residencial,linkedin) VALUES (:celular,:residencial,:linkedin)');
-  $stmt->execute(array(':celular' => $dados->getCelular(), 
-                        ':residencial'      => $dados->getResidencial(),
-                        ':linkedin'      => $dados->getLinkedin(),
-                         )); 
-                                         
+  echo $dados->getResidencial();
+  
+  $stmt = $pdo->prepare('INSERT INTO CONTATO(celular,residencial,linkedin)VALUES(:celular,:telefone,:linkedin)');
+  $stmt->execute(array(':celular'   => $dados->getCelular(), 
+                       ':telefone'  => $dados->getResidencial(),
+                       ':linkedin'  => $dados->getLinkedin()));                                        
 } catch(PDOException $e) {
   echo 'Error: ' . $e->getMessage();
+  
      
-}      
-    } 
+}     
+  } 
+   
+  
+  
 }

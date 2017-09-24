@@ -37,12 +37,7 @@ CREATE TABLE ADMIN (
     id_user INTEGER REFERENCES USUARIO(id_user)
 );
 
-CREATE TABLE tb_cidades (
-    estado VARCHAR(200),
-    uf CHAR(2),
-    nome VARCHAR(200),
-    id INTEGER AUTO_INCREMENT PRIMARY KEY
-);
+
 
 CREATE TABLE LOG (
     data_hora DATE,
@@ -93,12 +88,13 @@ CREATE TABLE FORMACAO (
 );
 
 CREATE TABLE ENDERECO (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY
     numero Integer,
     complemento VARCHAR(100),
     cep VARCHAR(10) NOT NULL,
     bairro VARCHAR(100),
+	estado VARCHAR(200),
     logradouro VARCHAR(200) NOT NULL,
-    id_cidade_fk INTEGER REFERENCES CIDADE(id),
     id_juridico_fk INTEGER REFERENCES JURIDICO(id_empresa),
     id_canditato_fk INTEGER REFERENCES CANDIDATO(id_candidato)
 );
