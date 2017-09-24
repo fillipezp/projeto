@@ -1,13 +1,12 @@
 <?php
 
 
-class JURIDICO extends Usuario{
+class JURIDICO{
 	
 private $razao_social;
 private $nfantasia;
 private $cnpj;
 private $ie;
-private $bairro;
 private $ramo;
 
 	public function getRazao_social(){

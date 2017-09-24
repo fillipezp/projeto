@@ -1,13 +1,36 @@
 <?php
-    require_once 'ConexaoDao.php';
+        require_once 'ConexaoDao.php';
 	require_once '../CONTROL/Obter_Empresa.php';
+        require_once '../MODEL/User_Juridico.php';
+         require_once '../MODEL/Endereco.php';
    
 	
-   class EmpresaDAO extends ConexaoDao {
-        
-		
-		
-		// Retornar todos am empresas cadastrados no site
+class EmpresaDAO extends Connect {
+           
+ public function Insere(JURIDICO $dados ){
+     
+try { 
+  $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+  $stmt = $pdo->prepare('INSERT INTO juridico (nfantasia,cnpj,ie,razao_social,ramo) VALUES(:nfantasia,:cnpj,:ie,:razao,:ramo)');
+  $stmt->execute(array(':nfantasia' => $dados->getNfantasia(), 
+                        ':cnpj'      => $dados->getCnpj(),
+                         ':ie'       => $dados->getIe(),  
+                         ':razao'    => $dados->getRazao_social(), 
+                         ':ramo'     => $dados->getRamo()));                  
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+     
+}      
+    } 
+
+
+
+
+	
+
         public function getAll() {
             $result = array();
             $stm = $this->conn->query('SELECT * FROM JURIDICO o');
@@ -62,24 +85,6 @@
         }
 		
 		
-		
-		
-		
-		
-		
-		
-		
         }
-			
-		
-    
-	
-	
-	
-	
-	
-	
-	
-	
 	
 ?>

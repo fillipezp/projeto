@@ -1,0 +1,29 @@
+<?php
+        require_once 'ConexaoDao.php';
+	require_once '../CONTROL/Obter_Empresa.php';
+        require_once '../MODEL/Contato.php';
+   
+      
+class ContatoDao extends Connect {
+         
+    
+    
+ public function Insere(CONTATO $dados ){
+     
+try { 
+  $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+  $stmt = $pdo->prepare('INSERT INTO CONTATO(celular,residencial,linkedin) VALUES (:celular,:residencial,:linkedin)');
+  $stmt->execute(array(':celular' => $dados->getCelular(), 
+                        ':residencial'      => $dados->getResidencial(),
+                        ':linkedin'      => $dados->getLinkedin(),
+                         )); 
+                                         
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+     
+}      
+    } 
+}
