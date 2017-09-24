@@ -1,7 +1,7 @@
 <?php
 
 
-class candidato extends Usuario {
+class candidato  {
 	
 private $nome_completo;
 private $sexo;

@@ -1,17 +1,42 @@
+
 <?php
     require_once 'ConexaoDao.php';
-	require_once '../CONTROL/Obter_Candidato.php';
-   
+    require_once '../CONTROL/Obter_Candidato.php';
+    require_once '../MODEL/User_Candidato.php';
+
 	
-   class CandidatoDAO extends ConexaoDao {
+   class CandidatoDAO extends Connect{
         
-		
-		
-		
-		
-		
-		
-		// Retornar todos os candidatos cadastrados no site
+           
+ public function Insere(candidato $dados ){
+     
+try { 
+  $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
+ // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  echo $dados->getNome_completo();
+  
+
+  $stmt = $pdo->prepare('INSERT INTO CANDIDATO (cpf,dt_exp,dt_nascimento,estado_civil,og_exped_uf,sexo,nome_completo,rg) VALUES(:cpf,:dt_exp,:dt_nascimento,:estado_civil,:og_exped_uf,:sexo,:nome_completo,:rg)');
+  $stmt->execute(array(  ':cpf'          => $dados->getCpf(), 
+                         ':dt_exp'       => $dados->getDt_exp(),
+                         ':dt_nascimento'=> $dados->getDt_nascimento(),  
+                         ':estado_civil' => $dados->getEstado_civil(), 
+                         ':og_exped_uf'  => $dados->getOg_exped_uf(),
+                         ':sexo'         => $dados->getSexo(),
+                         ':nome_completo'=> $dados->getNome_completo(),
+                         ':rg'           => $dados->getRg() ));  
+  
+  //header("Location: ../VIEW/Candidato_Form.html");
+  
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+     
+}      
+    } 
+
+	
+
         public function getAll() {
             $result = array();
             $stm = $this->conn->query('SELECT * FROM CANDIDATO order by asc');
@@ -31,10 +56,7 @@
 		
         }
 		
-		
-		
-		// Retorna todos os candidatos do sexo masculino
-		
+
 		 public function getALL_Names_Masculino() {
             $result = array();
             $stm = $this->conn->query('SELECT nome_completo FROM CANDIDATO  WHERE sexo like '%Masculino%'');
@@ -51,15 +73,9 @@
             return $result;
 		
         }
-		
-		
-		
-		
-		
-		
-		
-		//Retorna todos os candidatos do sexo feminino
-		 public function getALL_Names_Feminino() {
+
+        
+            public function getALL_Names_Feminino() {
             $result = array();
             $stm = $this->conn->query('SELECT nome_completo FROM CANDIDATO  WHERE sexo like '%Feminino%'');
             if($stm) {
@@ -68,7 +84,6 @@
                 
                     $CANDIDATO->setNome_completo($row->nome_completo);
 					$CANDIDATO->setCpf($row->cpf);
-					
                     $result[] = $CANDIDATO;
                 }
             }
@@ -77,39 +92,24 @@
         }
 		
 		
-		
-		
-		
-		
-		//Retorna um candidato por cpf
 	public function Get_CPF(){
 	$search = $_GET['cpf'];
-          $sql = "SELECT * FROM CANDIDATO WHERE cpf LIKE '%" . $search . "%'";
+        $sql = "SELECT * FROM CANDIDATO WHERE cpf LIKE '%" . $search . "%'";
+        $result = $PDO->query( $sql );
+        $rows = $result->fetchAll( PDO::FETCH_ASSOC );
+		
+        }
+		
+		
+
+	public function Get_dtnascimento(){
+	$search = $_GET['dt_nascimento'];
+         $sql = "SELECT * FROM CANDIDATO WHERE cpf LIKE '%" . $search . "%'";
          $result = $PDO->query( $sql );
          $rows = $result->fetchAll( PDO::FETCH_ASSOC );
 		
         }
 		
-		
-		
-		
-		
-		
-		
-		
-		//Retorna um candidato por data de nascimento
-		public function Get_dtnascimento(){
-		$search = $_GET['dt_nascimento'];
-          $sql = "SELECT * FROM CANDIDATO WHERE cpf LIKE '%" . $search . "%'";
-         $result = $PDO->query( $sql );
-         $rows = $result->fetchAll( PDO::FETCH_ASSOC );
-		
-        }
-		
-		
-		
-		
-		// Retornar todos os candidatos cadastrados no site por cidade
 		
         public function getAll_cidade() {
             $result = array();
@@ -127,27 +127,5 @@
             }
             return $result;
 		
-        }
-		
-		
-		
-		
-		
-		
-		
-		
-		
-        }
-			
-		
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-?>
+        }		
+          }

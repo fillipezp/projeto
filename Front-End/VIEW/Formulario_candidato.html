@@ -1,35 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+      
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CADASTRO DE CANDIDATOt</title>
 
-<!--Título-->
-<title>CADASTRO DE CANDIDATOt</title>
 
-<!--Página css-->
 <link href="STYLE/formularios.css" rel="stylesheet">
 
-</head>
-
-
-
-
-
-	<body>
-
-
+    </head>
+    
+    
+    <body>
+     
 	<div id='cssmenu'>
 	<ul>
             <li class='active'><a href='Main_candidato.html'>PRINCIPAL</a></li>
     </ul>
     </div>
-
-	<!--FORM ENVIANDO AS INFORMAÇÕES PARA A CLASSE DE CONTROLE-->
-	<form action="..CONTROL/Obter_Candidato.php" method="post">
+            
+            
+            
+            
 
 	
+        <form action='../CONTROL/Obter_Candidato.php' method="post">
+
 	
-	<!--INICIO DO FIELDSET DE DADOS PESSOAIS-->
+
 	<fieldset>
 			<legend>Dados Pessoais</legend>
 			<table cellspacing="10">
@@ -305,48 +309,40 @@
 
 <!-- CONTATO -->
 <!--INICIO DO FIELDSET DE CONTATO-->
-<fieldset>
 
-
-				<legend>CONTATO</legend>
+			<fieldset>
+				<legend>Contato </legend>
 				<table cellspacing="10">
-
 				<tr>
-				<td>
-				<label > Telefone residencial:</label>
+				<td width="121">
+				
+				<label > Telefone principal: </label>
 				</td>
-				<td align="left">
-				<input type="text" name="residencial" placeholder="(xx) xxxx-xxxx" size="10">
+				<td width="300" align="left">
+				<input  size="50" type="text" name="telefone">
 				</td>
-				</tr>
-				
-				
-				
+   
    
 				<td>
-				<label > Celular:</label>
+				<label> Celular </label>
 				</td>
-				<td align="left">
-				<input type="text" name="celular" placeholder="celular">
-				</td>
-				</tr>
-  
-  
-  
-  
-  
-				<tr>
 				<td>
-				<label > Linkedin: </label>
+				<input size="50" type="text" name="celular">
 				</td>
-				<td align="left">
-				<input type="text" name="linkedin" size="100">
+                                    
+                                    
+                                 <td>
+				<label> Linkedin </label>
 				</td>
+				<td>
+				<input  size="50" type="text" name="linkedin">
+				</td>   
 				</tr>
-				</table>
-				
-				
-<!--FIM DO FIELDSET DE CONTATO-->				
+
+
+
+
+                                </table>                     
 </fieldset>
 
 
@@ -354,8 +350,12 @@
 
 <!--BOTÃO DE SUBMIT PARA ENVIAR AS INFORMAÇÕES PARA A CLASSE DE CONTROLE DO PHP-->
 <br />
+
+
+<center>
 <input type="submit" value="Cadastrar">
 <input type="reset" value="Limpar">
+</center>
 </form>
 
 
@@ -369,15 +369,13 @@
 <!--RODAPÉ DO SITE-->
 <div id="footer">
 <center>
-<h3>TI JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>=
+<h3>TI JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>
 </center>
 </div>
  
 
  
- 
- </body>
-
+    </body>
 </html>
 
 
