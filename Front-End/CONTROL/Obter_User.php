@@ -2,7 +2,7 @@
 require_once '../MODEL/User.php';
 require_once '../DAO/UserDao.php';
 
-class ObterLogin{
+class Registrar{
 
 public function ObterRegistro(){
     
@@ -12,11 +12,10 @@ $password = $_POST['pass'];
 
 
 $usuario ->setEmail($user);
-$usuario ->setSenha($senha);
+$usuario ->setSenha($password);
 
 $enviar = new UserDao();
 $enviar->Insere($usuario);
-
 
 
 /*
@@ -28,9 +27,6 @@ header("Location: ../VIEW/Main_Interno.html");
 
 
 
-$executar = new ObterLogin();
-
-echo $executar ->ObterRegistro();
 
 
 
@@ -40,6 +36,9 @@ echo $executar ->ObterRegistro();
 
 
 
+$executar = new Registrar();
+
+echo $executar ->ObterRegistro();
 
 
 
