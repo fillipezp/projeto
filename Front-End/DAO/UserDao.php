@@ -13,8 +13,9 @@ $dados->getEmail();
      
 try { 
   $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
- // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+header("Location: ../VIEW/Main_Interno.html");
 
   $stmt = $pdo->prepare('INSERT INTO usuario (email,senha) VALUES (:email,:senha)');
   $stmt->execute(array(':email'     => $dados->getEmail(),
