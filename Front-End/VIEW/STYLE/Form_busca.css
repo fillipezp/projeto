@@ -1,6 +1,9 @@
 .container {
-  width: 50%; /* define a largura do campo */ 
-  position: relative;  /* cria o contexto de posicionamento do botão */ 
+  width: 40%; /* define a largura do campo */ 
+    position: absolute;;
+    top: 50%;
+    left: 30%;
+    right: 50%;
 }
 label {display:block;}
 input {width: 100%;} /* define a largura do campo igual a largura do container */
@@ -114,7 +117,7 @@ button {
 
 body{
 	
-background-image:url(../IMAGENS/emp.jpg);
+background-image:url(../IMAGENS/bcbusca.jpg);
 background-repeat:no-repeat;
 background-size:100%;
 
@@ -136,14 +139,3 @@ background-size:100%;
 	
 	
 }
-
-.centro {
-    position: absolute;;
-    top: 50%;
-    left: 50%;
-}
-
-.busca {
-    width: 500px!important;
-}
-
