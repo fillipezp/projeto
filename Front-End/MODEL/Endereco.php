@@ -10,6 +10,15 @@ private $cep;
 private $bairro;
 private $estado;
 private $cidade;
+private $fk_empresa;
+function getFk_empresa() {
+    return $this->fk_empresa;
+}
+
+function setFk_empresa($fk_empresa) {
+    $this->fk_empresa = $fk_empresa;
+}
+
 
 	public function getLogradouro(){
 		return $this->logradouro;

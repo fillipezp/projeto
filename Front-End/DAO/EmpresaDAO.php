@@ -7,8 +7,7 @@
 	
 class EmpresaDAO extends Connect {
            
- public function Insere(JURIDICO $dados ){
-     
+ public function Insere(JURIDICO $dados ){  
 try { 
   $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -21,13 +20,25 @@ try {
                          ':razao'    => $dados->getRazao_social(), 
                          ':ramo'     => $dados->getRamo()));  
   
+ 
   
+$fk =  $pdo->lastInsertId();
+
+$enviar = new ObterEmpresa();
+$enviar->ObterEmpresa_Endereco((int)$fk);
+  
+
+
+
 } catch(PDOException $e) {
   echo 'Error: ' . $e->getMessage();
      
 }      
     } 
 
+    
+    
+    
 
 
 

@@ -25,15 +25,15 @@ $empresa ->setCnpj($cnpj);
 $empresa ->setIe($ie);
 $empresa ->setRamo($ramo);
 
-
 $empresadao = new EmpresaDAO;
 $empresadao->Insere($empresa);
+
+
+  
 }
 
 
-
-
-public function ObterEmpresa_Endereco(){
+public function ObterEmpresa_Endereco(int $chave){
 
 $end = new ENDERECO();
   
@@ -44,6 +44,7 @@ $complemento = $_POST ['complemento'];
 $estado = $_POST ['estado'];
 $cidade = $_POST ['cidade'];
 $cep = $_POST ['cep']|| '-' || $_POST['cep2'];;
+$fk = $chave;
 
 $end->setLogradouro($logradouro);
 $end ->setNumero($numero);
@@ -52,6 +53,8 @@ $end->setComplemento($complemento);
 $end->setEstado($estado);
 $end->setCidade($cidade);
 $end ->setCep($cep);
+$end->setFk_empresa($fk);
+
 
 $enviar = new EnderecoDao_Empresa();
 $enviar->Insere($end);
@@ -81,9 +84,9 @@ $enviar->Insere($con);
 $executar = new ObterEmpresa();
 
 echo $executar ->ObterEmpresa_Dados();
-echo $executar ->ObterEmpresa_Endereco();
+//echo $executar ->ObterEmpresa_Endereco();
 echo $executar ->ObterEmpresa_Contato();
-header("Location: ../VIEW/Main_empregador.html");
+//header("Location: ../VIEW/Main_empregador.html");
 
 
 

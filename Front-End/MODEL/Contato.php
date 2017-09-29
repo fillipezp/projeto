@@ -5,6 +5,7 @@ private $residencial;
 private $celular;
 private $linkedin;
 
+
 	public function getResidencial(){
 		return $this->residencial;
 	}

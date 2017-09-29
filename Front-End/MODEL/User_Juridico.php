@@ -2,12 +2,22 @@
 
 
 class JURIDICO{
-	
+
+private $id;    
 private $razao_social;
 private $nfantasia;
 private $cnpj;
 private $ie;
 private $ramo;
+
+
+function getId() {
+    return $this->id;
+}
+
+function setId($id) {
+    $this->id = $id;
+}
 
 	public function getRazao_social(){
 		return $this->razao_social;
