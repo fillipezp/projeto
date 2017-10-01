@@ -1,29 +1,31 @@
 <?php
 
-include_once '../MODEL/Vaga.php';
-include_once '../DAO/VagaDAO.php';
+
+require_once '../MODEL/Vaga.php';
+require_once '../DAO/VagaDAO.php';
 
 class ObterVaga {
   
 public function ObterVagaDados() {
-$vaga = new vaga();
+$vaga = new Vaga();
 
-$cargo = $_POST['cargo'];  
-$atividade =  $_POST['atividade'] ;  
-$remuneracao =  $_POST ['remuneracao'];
-$beneficio = $_POST['beneficio'];
-$modalidade= $_POST ['emprego'];
-$horario = $_POST ['horario'];
-$cargahoraria = $_POST ['cargahoraria'];
-$nvagas = $_POST ['nvagas'];
+$atividade   = $_POST['atividade'];
+$cargo       = $_POST['cargo'];   
+$remuneracao = $_POST['remuneracao'];
+$beneficio   = $_POST['beneficio'];
+$cargahoraria= $_POST['cargahoraria'];
+$nvagas      = $_POST['nvagas'];
+$horario     = $_POST['horario'];
 
+$vaga ->setAtividades($atividade);
 $vaga ->setCargo($cargo);
-$vaga ->setAtividades($atividades);
 $vaga ->setRemun($remuneracao);
 $vaga ->setBeneficios($beneficio);
-$vaga ->setHorario($horario);
 $vaga ->setC_hora($cargahoraria);
-$vaga ->setN_vagas($n_vagas);
+$vaga ->setN_vagas($nvagas);
+$vaga ->setHorario($horario);
+
+
 
 $enviar = new VagaDAO();
 $enviar->Insere($vaga);

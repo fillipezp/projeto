@@ -1,11 +1,15 @@
 <?php
-  include_once '../CONTROL/Obter_Vaga.php';
-  include_once './ConexaoDao.php';
-	
-   class VagaDAO extends ConexaoDao {
+  
+     require_once 'ConexaoDao.php';
+     require_once '../CONTROL/Obter_Vaga.php';
+     require_once '../MODEL/Vaga.php'; 
+     
+  	
+ class VagaDAO extends Connect {
         
 	
-      public function Insere(vaga $dados ){  
+ public function Insere(Vaga $dados ){  
+     
 try { 
   $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -65,3 +69,5 @@ try {
 	
 	
    } 	
+
+ ?>    

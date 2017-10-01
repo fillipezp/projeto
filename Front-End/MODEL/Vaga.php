@@ -2,7 +2,7 @@
 
 
 
-class vaga {
+    class Vaga {
 	
 private $id;
 private $n_vagas;
