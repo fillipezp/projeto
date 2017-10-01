@@ -31,16 +31,6 @@ try {
 }      
     } 
         
-        
-        
-       
-    
-    
-    
-    
-    
-    
-    
     
        
 		// Retornar todos os candidatos cadastrados no site
@@ -49,8 +39,7 @@ try {
             $stm = $this->conn->query('SELECT * FROM VAGAS ');
             if($stm) {
                 while($row = $stm->fetch(PDO::FETCH_OBJ)) {
-                    $VAGAS = new vaga();
-                    $VAGAS->setNome_completo($row->nome_completo);
+                    $VAGAS = new vaga();                   
 					$VAGAS->setId($row->id);
 					$VAGAS->setN_vagas($row->nvagas);
 					$VAGAS->setRemun($row->remun);

@@ -1,9 +1,9 @@
 <?php
 
-require_once '../DAO/VagaDAO.php';
+require '../DAO/PesquisaDao.php';
 
-
-
-
-$pesquisa = new VagaDAO();
+$pesquisa = new PesquisaDAO();
 $pesquisa->getAll();
+
+
+
