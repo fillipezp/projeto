@@ -1,4 +1,7 @@
 <?php
+
+
+
 class vaga {
 	
 private $id;

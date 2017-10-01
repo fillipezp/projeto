@@ -21,4 +21,15 @@ CREATE TABLE ENDERECO (
 
 
 
+alter table vagas add COLUMN cargo varchar(50) not null;
+
+
+
+
+
+
+
+
+
 USAR JQUERY VALIDATE PARA FAZER VALIDAÇÃO DOS FORMULÁRIOS
+

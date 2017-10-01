@@ -1,11 +1,44 @@
 <?php
-    require_once 'ConexaoDao.php';
-    require_once '../CONTROL/Obter_Vaga';
-   
+  include_once '../CONTROL/Obter_Vaga.php';
+  include_once './ConexaoDao.php';
 	
    class VagaDAO extends ConexaoDao {
         
-		
+	
+      public function Insere(vaga $dados ){  
+try { 
+  $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+  $stmt = $pdo->prepare('INSERT INTO VAGAS (n_vagas,horario,c_hora,remun,atividades,beneficios,cargo) VALUES(:n_vagas,:horario,:c_hora,:remun,:atividades,:beneficios,:cargo)');
+  $stmt->execute(array(':n_vagas'        => $dados->getN_vagas(), 
+                        ':horario'       => $dados->getHorario(),
+                         ':c_hora'       => $dados->getC_hora(),  
+                         ':remun'        => $dados->getRemun(), 
+                         ':atividades'   => $dados->getAtividades(),
+                         ':beneficios'   => $dados->getBeneficios(),
+                         ':cargo'        => $dados->getCargo() ));  
+  
+
+} catch(PDOException $e) {
+  echo 'Error: ' . $e->getMessage();
+     
+}      
+    } 
+        
+        
+        
+       
+    
+    
+    
+    
+    
+    
+    
+    
+       
 		// Retornar todos os candidatos cadastrados no site
         public function getAll() {
             $result = array();
@@ -31,5 +64,4 @@
 	
 	
 	
-   }	
-?>
+   } 	
