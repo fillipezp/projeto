@@ -10,6 +10,7 @@ require_once '../DAO/ContatoDao_Empresa.php';
 
 class ObterEmpresa {
   
+
 public function ObterEmpresa_Dados() {
 $empresa = new JURIDICO();
 

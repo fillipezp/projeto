@@ -7,6 +7,7 @@ require_once '../DAO/EnderecoDao_Candidato.php';
 require_once '../DAO/ContatoDao_Candidato.php';
 
 
+
 class ObterCandidato {
 	
 public function ObterCandidato_Dados() {
@@ -29,6 +30,7 @@ $candidato->setRg($rg);
 $candidato->setDt_exp($dt_expedicao);
 $candidato->setCpf($cpf);
 $candidato->setOg_exped_uf($og_expedidor);
+
 
 
 $enviar = new CandidatoDAO();
