@@ -19,9 +19,9 @@
     </div>
             
         <div id= "contact_form">              
-        <form action='../CONTROL/Obter_Candidato.php' method="post">
+        <form onsubmit="return validaForm()"  name="candidato_form" action='../CONTROL/Obter_Candidato.php' method="post">
 
-	<fieldset>
+	<fieldset >
                 <legend>Dados Pessoais</legend>
 			<table cellspacing="10">
 				<tr>
@@ -29,7 +29,7 @@
 				<label > Nome completo: </label>
 				</td>
 				<td width="300" align="left">
-			    <input  size="50" type="text" name="nome_candidato">
+			    <input  size="50" type="text" name="nome_candidato" required >
 				</td>
 				
 				
@@ -37,7 +37,7 @@
 				<label> Sexo </label>
 				</td>
 				<td>
-				<select name="sexo" >
+				<select name="sexo" required >
 				<option value="Masculino">Masculino</option>
 				<option value="Feminino">Feminino</option>
 				</select>
@@ -52,9 +52,9 @@
 				<label>Data de nascimento: </label>
 				</td>
 				<td align="left">
-				<input type="text" name="dia" size="2" maxlength="2"> 
-				<input type="text" name="mes" size="2" maxlength="2"> 
-				<input type="text" name="ano" size="4" maxlength="4">
+				<input type="text" name="dia" size="2" maxlength="2" required> 
+				<input type="text" name="mes" size="2" maxlength="2" required> 
+				<input type="text" name="ano" size="4" maxlength="4" required>
 				</td>
    
    
@@ -66,7 +66,7 @@
 				</td>
 				<td>
 				
-				<select name="estado_civil">
+				<select name="estado_civil" required>
 				<option value="solteiro(a)"> Solteiro(a)</option>
 				<option value="casado(a)">Casado(a)</option>
 				<option value="viuvo(a)">Viúvo(a) </option>
@@ -86,7 +86,7 @@
 				<label> RG: </label>
 				</td>
 				<td align="left">
-				<input type="text" name="rg" size="13" maxlength="13">
+				<input type="text" name="rg" size="13" maxlength="13" required>
 				</td>
   
   
@@ -96,9 +96,9 @@
     
 				<td> Data de expedição: </td> 
 				<td align="left">
-				<input type="text" name="dia2" size="2" maxlength="2" />
-				<input type="text" name="mes2" size="2" maxlength="2" /> 
-				<input type="text" name="ano2" size="4" maxlength="4"  />
+				<input type="text" name="dia2" size="2" maxlength="2" required/>
+				<input type="text" name="mes2" size="2" maxlength="2" required/> 
+				<input type="text" name="ano2" size="4" maxlength="4"  required/>
 				</td> 
 				</tr>
 
@@ -111,7 +111,7 @@
 				<label>CPF:</label>
 				</td>
 				<td align="left">
-				<input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
+				<input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2" required>
 				</td>
  
                                     
@@ -147,7 +147,7 @@
  
  <!--FIM DO FIELDSET DE DADOS PESSOAIS-->
 </fieldset>
-<br />
+<br /><br /><br />
 
 
 
@@ -168,7 +168,7 @@
 				<label > Rua:</label>
 				</td>
 				<td align="left">
-				<input type="text" name="logradouro">
+				<input type="text" name="logradouro" required>
 				</td>
 				
 				
@@ -179,7 +179,7 @@
 				<label > Numero:</label>
 				</td>
 				<td align="left">
-				<input type="text" name="numero" size="4">
+				<input type="text" name="numero" size="4" required>
 				</td>
 				</tr>
   
@@ -192,7 +192,7 @@
 				<label for="bairro">Bairro: </label>
 				</td>
 				<td align="left">
-				<input type="text" name="bairro">
+				<input type="text" name="bairro" required>
 				</td>
 				
 				
@@ -215,6 +215,7 @@
 				</td>
 				<td align="left">
 				<select name="estado"> 
+                                <option value=""></option>    
 				<option value="ac">Acre</option> 
 				<option value="al">Alagoas</option> 
 				<option value="am">Amazonas</option> 
@@ -257,7 +258,7 @@
 				<label for="cidade">Cidade: </label>
 				</td>
 				<td align="left">
-				<input type="text" name="cidade">
+				<input type="text" name="cidade" required>
 				</td>
 				</tr>
 				
@@ -270,7 +271,7 @@
 				<label for="cep">CEP: </label>
 				</td>
 				<td align="left">
-				<input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3">
+				<input type="text" name="cep" size="5" maxlength="5" required> - <input type="text" name="cep2" size="3" maxlength="3" required>
 				</td>
 				</tr>
 				
@@ -279,7 +280,7 @@
 			
 <!--FIM DO FIELDSET DE ENDEREÇO-->			
 </fieldset>
-	<br />
+	<br /><br /><br />
 
 
 
@@ -299,7 +300,7 @@
 				<label > Telefone principal: </label>
 				</td>
 				<td width="300" align="left">
-				<input  size="50" type="text" name="telefone">
+				<input  size="50" type="text" name="telefone" required>
 				</td>
    
    
@@ -320,20 +321,38 @@
 				</tr>
 
 
-     
-                                    
-                                    
-                                  
 
                                 </table>                     
 </fieldset>
 
 
+<br /><br /><br />
+
+
+
+
+
+<fieldset>
+      
+				<legend>Upload de currículo </legend>
+				<table cellspacing="10">
+				<tr>
+				<td width="121">
+        
+                                <td> <input type="file" name="fileUpload">  </td>
+                                  
+          </td>
+                                    
+                                    
+             </tr>
+           </table>                     
+</fieldset>
+
 
 
 <center>
-<input type="submit" value="Cadastrar">
-<input type="reset" value="Limpar">
+    <input type="submit"  value="Cadastrar">
+
 </center>
 </form>
 
@@ -342,38 +361,6 @@
   <br /><br /><br />     
   
   
-  <center>
-   <form action="../CONTROL/Upload_Curriculos.php" method="POST" enctype="multipart/form-data">
-  <fieldset>
-      
-				<legend>Upload de currículo </legend>
-				<table cellspacing="10">
-				<tr>
-				<td width="121">
-        
-                                    <td>  <input type="file" name="fileUpload">  </td>
-                                    <td>  <input type="submit" value="Enviar"> </td>
-          </td>
-                                    
-                                    
-             </tr>
-           </table>                     
-</fieldset>
-   
-       
-</form>          
-            
-  </center>         
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
             
         </div>
@@ -382,7 +369,7 @@
 <!--RODAPÉ DO SITE-->
 <div id="footer">
 <center>
-<h3>TI JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>
+<h3>ALPHA JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>
 </center>
 </div>
  

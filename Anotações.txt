@@ -1,4 +1,4 @@
-Alter table user  add collumn nome_user
+   Alter table user  add collumn nome_user
 
 
 ALTER TABLE `contato` ADD `id` INT NOT NULL primary key AUTO_INCREMENT;

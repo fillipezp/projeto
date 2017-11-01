@@ -44,7 +44,7 @@ $bairro = $_POST ['bairro'];
 $complemento = $_POST ['complemento'];
 $estado = $_POST ['estado'];
 $cidade = $_POST ['cidade'];
-$cep = $_POST ['cep']|| '-' || $_POST['cep2'];;
+$cep = $_POST ['cep'];
 $fk = $chave;
 
 $end->setLogradouro($logradouro);

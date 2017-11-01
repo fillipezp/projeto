@@ -83,16 +83,39 @@ $enviar->Insere($con);
 
 }
 
+public function ObterCurriculo(){
+    
+        if(isset($_FILES['fileUpload']))
+   {
+      date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
+
+      $ext = strtolower(substr($_FILES['fileUpload']['name'],-4)); //Pegando extensão do arquivo
+      $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+      $dir = '../CURRICULOS/'; //Diretório para uploads
+
+      move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo 
+      
+   }
 }
+      
+
+   
+    
+
+}
+
+
+
+
+
 
 $executar = new ObterCandidato();
 
 echo $executar ->ObterCandidato_Dados();
 echo $executar ->ObterCandidato_Endereco();
 echo $executar ->ObterCandidato_Contato();
- header("Location: ../VIEW/Main_Candidato.html");
-
-
+echo $executar ->ObterCurriculo();
+header("Location: ../VIEW/Main_Candidato.html");
 
 
 	
