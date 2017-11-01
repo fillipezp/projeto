@@ -26,7 +26,16 @@ $fk =  $pdo->lastInsertId();
 
 $enviar = new ObterEmpresa();
 $enviar->ObterEmpresa_Endereco((int)$fk);
-header("Location: ../VIEW/Main_empregador.html");  
+
+ echo '<script type="text/javascript">
+            alert("Salvo com Sucesso !");
+            window.history.go(-2);
+        </script>';
+ 
+ 
+
+ 
+
 
 
 
