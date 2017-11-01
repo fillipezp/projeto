@@ -26,7 +26,7 @@ $fk =  $pdo->lastInsertId();
 
 $enviar = new ObterEmpresa();
 $enviar->ObterEmpresa_Endereco((int)$fk);
-// header("Location: ../VIEW/Main_empregador.html");  
+header("Location: ../VIEW/Main_empregador.html");  
 
 
 
