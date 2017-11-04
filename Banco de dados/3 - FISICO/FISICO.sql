@@ -27,7 +27,7 @@ CREATE TABLE CANDIDATO (
     dt_nascimento DATE NOT NULL,
     rg VARCHAR(15) NOT NULL,
     og_exped_uf VARCHAR(10) NOT NULL,
-    dt_exp DATE NOT NULL,
+    dt_exp DATE,
     cpf VARCHAR(15) NOT NULL,
     FK_USER_id_user INTEGER REFERENCES USUARIO(id_user)
 );
@@ -53,6 +53,7 @@ CREATE TABLE VAGAS (
     remun DECIMAL(4,2),
     atividades VARCHAR(300) NOT NULL,
     beneficios VARCHAR(300),
+
     FK_JURIDICO_id_empresa INTEGER REFERENCES JURIDICO(id_empresa)
 );
 

@@ -25,6 +25,21 @@ try {
 		       ':rg'=>$dados->getRg()
                        ));  
   
+  $fk =  $pdo->lastInsertId();
+
+$enviar = new ObterCandidato();
+$enviar->ObterCandidato_Endereco($fk);
+  
+  
+  
+  
+  echo '<script type="text/javascript">
+           alert("Salvo com Sucesso !");
+         window.history.go(-2);
+      </script>';
+ 
+  
+  
    
 } catch(PDOException $e) {
   echo 'Error: ' . $e->getMessage();

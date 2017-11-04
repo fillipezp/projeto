@@ -15,11 +15,11 @@ $candidato = new candidato();
 
 $nome_candidato = $_POST['nome_candidato'];
 $sexo = $_POST['sexo'];	
-$dtnascimento = $_POST['dia'] || '/' || $_POST['mes'] || '/' ||$_POST['ano'];		
+$dtnascimento = $_POST['data'];		
 $estado_civil = $_POST['estado_civil'];	
 $rg = $_POST ['rg'];	
-$dt_expedicao = $_POST['dia2'] || '/' ||$_POST['mes2']|| '/' || $_POST['ano2'] ;		
-$cpf = $_POST ['cep'] || '-' || $_POST['cep2'];
+$dt_expedicao = $_POST['dt_exp'];		
+$cpf = $_POST ['cep'];
 $og_expedidor = $_POST['og_expedidor'];
 
 $candidato->setNome_completo($nome_candidato);
@@ -31,16 +31,12 @@ $candidato->setDt_exp($dt_expedicao);
 $candidato->setCpf($cpf);
 $candidato->setOg_exped_uf($og_expedidor);
 
-
-
 $enviar = new CandidatoDAO();
 $enviar->Insere($candidato);
 }
 
 
-
-
-public function ObterCandidato_Endereco(){
+public function ObterCandidato_Endereco(int $chave){
 
 $end = new ENDERECO();
   
@@ -50,7 +46,8 @@ $bairro = $_POST ['bairro'];
 $complemento = $_POST ['complemento'];
 $estado = $_POST ['estado'];
 $cidade = $_POST ['cidade'];
-$cep = $_POST ['cep']|| '-' || $_POST['cep2'];;
+$cep = $_POST ['cep'];
+$fk = $chave;
 
 $end->setLogradouro($logradouro);
 $end ->setNumero($numero);
@@ -59,6 +56,7 @@ $end->setComplemento($complemento);
 $end->setEstado($estado);
 $end->setCidade($cidade);
 $end ->setCep($cep);
+$end->setFk_candidato($fk);
 
 $enviar = new EnderecoDao_Candidato();
 $enviar->Insere($end);
@@ -81,32 +79,8 @@ $con->setLinkedin($linkedin);
 $enviar = new ContatoDao_Candidato();
 $enviar->Insere($con);
 
+}   
 }
-
-public function ObterCurriculo(){
-    
-        if(isset($_FILES['fileUpload']))
-   {
-      date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
-
-      $ext = strtolower(substr($_FILES['fileUpload']['name'],-4)); //Pegando extensão do arquivo
-      $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-      $dir = '../CURRICULOS/'; //Diretório para uploads
-
-      move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo 
-      
-   }
-}
-      
-
-   
-    
-
-}
-
-
-
-
 
 
 $executar = new ObterCandidato();
@@ -114,8 +88,6 @@ $executar = new ObterCandidato();
 echo $executar ->ObterCandidato_Dados();
 echo $executar ->ObterCandidato_Endereco();
 echo $executar ->ObterCandidato_Contato();
-echo $executar ->ObterCurriculo();
-header("Location: ../VIEW/Main_Candidato.html");
 
 
-	
+

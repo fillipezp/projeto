@@ -11,6 +11,8 @@ private $bairro;
 private $estado;
 private $cidade;
 private $fk_empresa;
+private $fk_candidato; 
+
 function getFk_empresa() {
     return $this->fk_empresa;
 }
@@ -18,6 +20,18 @@ function getFk_empresa() {
 function setFk_empresa($fk_empresa) {
     $this->fk_empresa = $fk_empresa;
 }
+
+function getFk_candidato() {
+    return $this->fk_candidato;
+}
+
+function setFk_candidato($fk_candidato) {
+    $this->fk_candidato = $fk_candidato;
+}
+
+
+
+
 
 
 	public function getLogradouro(){

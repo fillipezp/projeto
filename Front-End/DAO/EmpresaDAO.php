@@ -25,7 +25,7 @@ try {
 $fk =  $pdo->lastInsertId();
 
 $enviar = new ObterEmpresa();
-$enviar->ObterEmpresa_Endereco((int)$fk);
+$enviar->ObterEmpresa_Endereco($fk);
 
  echo '<script type="text/javascript">
             alert("Salvo com Sucesso !");

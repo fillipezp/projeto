@@ -1,16 +1,48 @@
-<?php
-
-
-
- if(isset($_FILES['fileUpload']))
-   {
-      date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
-
-      $ext = strtolower(substr($_FILES['fileUpload']['name'],-4)); //Pegando extensão do arquivo
-      $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
-      $dir = '../CURRICULOS/'; //Diretório para uploads
-
-      move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
-   }
-
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
     
+      
+  <script type="text/javascript">
+           alert("Estamos quase la, envie seu currículo para finalizar!");
+      </script>
+      
+    
+  </head>
+  <body>
+   
+      <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/> 
+  <center> 
+<form method="post" 
+      action="Teste.php"
+			  enctype="multipart/form-data">
+			<input type="file" 
+				   name="arquivo"
+				   />
+			<br/>
+			<input type="submit" value="Enviar"/>
+		</form>   
+      
+      
+  </center>
+      
+      
+      
+      
+      
+      
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,9 @@
 $(document).ready( function() {
   $("#empresa_form").validate({
     // Define as regras
+    
     rules:{
-       razao_social:{
+        razao_social:{
     
         required:true, 
         minlength: 3,
@@ -95,7 +96,7 @@ $(document).ready( function() {
       minlength: " Insira um CNPJ válido"
       },
       
-      email:{
+     linkedin:{
       required: " Campo obrigatório",  
       email: " Insira um email válido"
       },
@@ -127,10 +128,9 @@ $(document).ready( function() {
       
       },
       
-      
       cep:{
       required: " Campo obrigatório",  
-      minlength: " Insira um cep válido",
+      minlength: " Insira um cep válido"
      
       }
       
