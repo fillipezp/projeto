@@ -5,16 +5,19 @@
   
   echo '<script type="text/javascript">
            alert("Curriculos enviado com sucesso!");
-         window.history.go(-2);
+     window.history.go(-3);
       </script>';
                 
 	} else {
 		  
   echo '<script type="text/javascript">
            alert("Ops! Houve um erro no upload, tente fazer o envio novamente !");
-         window.history.go(-1);
+         window.history.go(-3);
       </script>';
   
 		print_r(error_get_last());
 	}
-?>  
+
+
+
+?>

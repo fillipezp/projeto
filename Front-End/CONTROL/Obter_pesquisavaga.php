@@ -20,16 +20,17 @@
    
  <br/> <br/> 
     
-<center>   
+<center> 
+    
+    
  <?php
 
- 
- 
 require '../DAO/PesquisaDao.php';
 
-$busca = $_POST['busca'];
+$busca; 
+ $busca = $_POST['busca'];
 
-if($busca <> null){
+if($_POST['busca'] <> null){
     
 $pesquisa = new PesquisaDAO();
 $pesquisa->getParameter($busca);    
@@ -52,10 +53,10 @@ $pesquisa->getAll();
     
 
 
-<!--RODAPÉ DO SITE-->
+
 
 <center>
-<h3>TI JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>
+<h3>ALPHA JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>
 </center>
 
      
