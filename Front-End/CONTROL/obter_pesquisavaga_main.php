@@ -8,7 +8,10 @@
 </head>
 <body>
 
-
+	<div id='cssmenu'>
+<ul>
+    <li class='active'><a href="../VIEW/BuscarVagas.html">Voltar</a></li>
+   
    
     
   
@@ -22,7 +25,7 @@
     
  <?php
 
-require '../DAO/PesquisaDao.php';
+require '../DAO/PesquisaDao_Main.php';
 
 $busca; 
  $busca = $_POST['busca'];
@@ -35,7 +38,7 @@ $pesquisa->getParameter($busca);
 }else{
 
 
-$pesquisa = new PesquisaDAO();
+$pesquisa = new PesquisaDAO_Main();
 $pesquisa->getAll();
 
 

@@ -127,6 +127,14 @@ body{
 	opacity: 0.6;
 }
 
+.login input[type=submit]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=submit]:active{
+	opacity: 0.6;
+}
+
 .login input[type=text]:focus{
 	outline: none;
 	border: 1px solid rgba(255,255,255,0.9);
@@ -138,6 +146,10 @@ body{
 }
 
 .login input[type=button]:focus{
+	outline: none;
+}
+
+.login input[type=submit]:focus{
 	outline: none;
 }
 
@@ -169,11 +181,14 @@ body{
 		<div class="login">
 				<input type="text" placeholder="Usuário" name="usuario" required> <br>
 				<input type="password" placeholder="Senha" name="senha" required><br>
-				<input type="button" value="Login">
+                                <input type="submit" value="Login"><br>
                                 
                               
 				<input type="button" value="Registrar-se" onClick="javascript:window.location.href='../CONTROL/cria-user-candidato/'"><br>
 		</div>
+                
+                
+                
                         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 				
@@ -189,8 +204,15 @@ body{
 				<?php endif; ?>
 				
 				<tr>
-					<td><input type="submit" value="Entrar"></td>
+					<input type="submit" value="Entrar">
 				</tr>
+                                
+                                
+                                
+                                
+                           
+                                
+                                
 			</table>
 		</form>
 	</body>
