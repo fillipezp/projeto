@@ -178,7 +178,7 @@ body{
 
 				
 				<tr>
-                                    <td><a href="../CONTROL/cria-usuarios/Empregador.php">Criar usuário</a></td>
+                                    <td><a href="../CONTROL/cria-user-empregador/">Criar usuário</a></td>
 				</tr>
 				
 				<?php if ( ! empty( $_SESSION['login_erro'] ) ) :?>
