@@ -172,7 +172,7 @@ body{
 				<input type="button" value="Login">
                                 
                               
-				<input type="button" value="Registrar-se" onClick="javascript:window.location.href='../CONTROL/cria-usuarios/'"><br>
+				<input type="button" value="Registrar-se" onClick="javascript:window.location.href='../CONTROL/cria-user-empregador/'"><br>
 		</div>
                         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 

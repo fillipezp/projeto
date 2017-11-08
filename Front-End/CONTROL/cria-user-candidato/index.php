@@ -1,6 +1,6 @@
 <?php
 // Inclui o arquivo de configuração
-include('../login/config.php');
+include('../login/login_candidato/config.php');
 
 // Variavél para preencher o erro (se existir)
 $erro = false;
@@ -99,31 +99,6 @@ if ( isset( $_POST ) && ! empty( $_POST ) ) {
 			</table>
 		</form>
 		
-		<?php 
-		// Mostra os usuários
-		$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios ORDER BY user_id DESC');
-		$pdo_verifica->execute();
-		?>
 		
-		<table border="1" cellpadding="5">
-		<tr>
-			<th>ID</th>
-			<th>Nome</th>
-			<th>Usuário</th>
-			<th>Senha Criptografada</th>
-			<th>Ação</th>
-		</tr>
-		<?php
-		while( $fetch = $pdo_verifica->fetch() ) {
-			echo '<tr>';
-			echo '<td>' . $fetch['user_id'] . '</td>';
-			echo '<td>' . $fetch['user_name'] . '</td>';
-			echo '<td>' . $fetch['user'] . '</td>';
-			echo '<td>' . $fetch['user_password'] . '</td>';
-			echo '<td> <a style="color:red;" href="?del=' . $fetch['user_id'] . '">Apagar</a> </td>';
-			echo '</tr>';
-		}
-		?>
-		</table>
 	</body>
 </html>
