@@ -158,7 +158,7 @@ body{
 		<title>Login</title>
 	</head>
 	<body>
-            <form action="../CONTROL/login/index.php" method="post">
+            <form action="../CONTROL/login/login_empregador/" method="post">
 			<table>
 				<div class="body"></div>
 		<div class="grad"></div>
@@ -178,7 +178,7 @@ body{
 
 				
 				<tr>
-                                    <td><a href="../CONTROL/cria-usuarios/">Criar usuário</a></td>
+                                    <td><a href="../CONTROL/cria-usuarios/Empregador.php">Criar usuário</a></td>
 				</tr>
 				
 				<?php if ( ! empty( $_SESSION['login_erro'] ) ) :?>

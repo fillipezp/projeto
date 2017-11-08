@@ -7,4 +7,4 @@ $_SESSION = array();
 session_destroy();
 
 // Redireciona para o login.php
-header('location: ../../VIEW/login.php');
+header('location: ../../VIEW/login_candidato.php');

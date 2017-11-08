@@ -9,6 +9,8 @@ include('./verifica_login.php');
 // Inclua o trecho abaixo, ele redireciona o usuário para 
 // o formulário de login
 include('./redirect.php');
+
+
 ?>
 
 Olá <b><?php echo $_SESSION['nome_usuario']?></b>, <a href="sair.php">clique aqui</a> para sair.
