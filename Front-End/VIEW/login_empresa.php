@@ -141,6 +141,11 @@ body{
 	outline: none;
 }
 
+
+
+
+
+
 ::-webkit-input-placeholder{
    color: rgba(255,255,255,0.6);
 }
@@ -166,14 +171,26 @@ body{
 			<div>Alpha<span>Jobs</span></div>
 		</div>
 		<br>
+                
+                <center>
 		<div class="login">
 				<input type="text" placeholder="Usuário" name="usuario" required> <br>
 				<input type="password" placeholder="Senha" name="senha" required><br>
-				<input type="button" value="Login">
+                             
                                 
                               
 				<input type="button" value="Registrar-se" onClick="javascript:window.location.href='../CONTROL/cria-user-empregador/'"><br>
+                                <br><br><br><br>
+                                
+                                <input type="submit" value="Login"></br>
+                              
+                                
+                                
+                                
+                                
 		</div>
+                      </center>
+                                
                         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 				
