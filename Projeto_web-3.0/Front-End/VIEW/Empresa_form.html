@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>CADASTRO JURÍDICO</title>
+<link href="STYLE/formularios.css" rel="stylesheet">
+
+ 
+    
+    
+
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>    
+  <script type="text/javascript" src="VALIDAÇÕES JS/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
+  <script type="text/javascript" src="VALIDAÇÕES JS/jQuery-Mask-Plugin/dist/jquery.mask.min.js"></script>   
+
+
+<script type="text/javascript">
+    
+jQuery(function($){
+$('#cnpj').mask("99.999.999/9999-99",{placeholder:" "});
+$("#celular").mask("(00) 0000-00009");
+$("#telefone").mask("(00) 0000-0000");
+$("#cep").mask("99.999-999");
+
+
+});
+
+
+
+</script>
+  
+  
+  
+  
+  
+</head>
+        <body>
+
+	<div id='cssmenu'>
+<ul>
+    <li class='active'><a href="Main_empregador.html">PRINCIPAL</a></li>
+   
+    
+</ul>
+</div>
+
+            <div id="contact_form">    
+                
+                
+   <form action="../CONTROL/Obter_Empresa.php" method="post" name="empresa_form" class="align-center" id="empresa_form" ">
+
+			<fieldset>
+				<legend>Dados Jurídicos </legend>
+				<table cellspacing="10">
+				<tr>
+				<td width="121">
+				
+                                <b> <label > *Razão Social: </label>  </b>
+				</td>
+				<td width="300" align="left">
+				<input  id="razao_social" type="text" name="razao_social" >
+				</td>
+   
+   
+				<td>
+				<label> Nome Fantasia </label>
+				</td>
+				<td>
+				<input  size="50" type="text" id="nfantasia" name="nfantasia">
+				</td>
+				</tr>
+  
+  
+<tr>
+				<td>
+                                    <b><label>*Ramo:</label></b>
+				</td>
+				<td align="left">
+				<input type="text" name="ramo" id="ramo" > 
+				</td>
+				</tr>
+   
+   
+				<td>
+				<label> Inscrição Estadual: </label>
+				</td>
+				<td>
+				<input  type="text"  name="inscric" >
+				</td>
+				</tr>
+				
+				
+				
+ 
+				<tr>
+				<td>
+                                    <b><label> *CNPJ: </label></b>
+				</td>
+				<td align="left">
+				<input  type="text" name="cnpj" id="cnpj" size="18"  >
+				</td>
+  
+  
+  
+  
+  
+				
+ 
+		</table>
+</fieldset>
+
+
+
+<br />
+<!-- ENDEREÇO -->
+<fieldset>
+				<legend>Dados de Endereço</legend>
+				<table cellspacing="10">
+
+				<tr>
+				<td>
+                                    <b><label > *Logradouro:</label></b>
+				</td>
+				<td align="left">
+				<input type="text" name="logradouro" >
+				</td>
+				
+				
+				
+				
+				<td>
+                                    <b><label > *Numero:</label></b>
+				</td>
+				<td align="left">
+				<input type="text" name="numero" size="4" >
+				</td>
+				</tr>
+  
+  
+  
+  
+  
+  
+  
+				<tr>
+				<td>
+                                    <b><label for="bairro"> *Bairro: </label></b>
+				</td>
+				<td align="left">
+				<input type="text" name="bairro" >
+				</td>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<td>
+				<label> Complemento</label>
+				</td>
+				<td>
+				<input type="text" name="complemento" />
+				</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+				<td>
+                                    <b><label for="cidade">*Cidade: </label></b>
+				</td>
+				<td align="left">
+				<input type="text" name="cidade" >
+				</td>
+				</tr>
+				
+				
+				<tr>
+				<td>
+                                    <b><label name="estado" for="estado">*Estado:</label></b>
+				</td>
+				<td align="left">
+				<select name="estado"> 
+				<option value=""></option> 
+				<option value="ac">Acre</option> 
+				<option value="al">Alagoas</option> 
+				<option value="am">Amazonas</option> 
+				<option value="ap">Amapá</option> 
+				<option value="ba">Bahia</option> 
+				<option value="ce">Ceará</option> 
+				<option value="df">Distrito Federal</option> 
+				<option value="es">Espírito Santo</option> 
+				<option value="go">Goiás</option> 
+				<option value="ma">Maranhão</option> 
+				<option value="mt">Mato Grosso</option> 
+				<option value="ms">Mato Grosso do Sul</option> 
+				<option value="mg">Minas Gerais</option> 
+				<option value="pa">Pará</option> 
+				<option value="pb">Paraíba</option> 
+				<option value="pr">Paraná</option> 
+				<option value="pe">Pernambuco</option> 
+				<option value="pi">Piauí</option> 
+				<option value="rj">Rio de Janeiro</option> 
+				<option value="rn">Rio Grande do Norte</option> 
+				<option value="ro">Rondônia</option> 
+				<option value="rs">Rio Grande do Sul</option> 
+				<option value="rr">Roraima</option> 
+				<option value="sc">Santa Catarina</option> 
+				<option value="se">Sergipe</option> 
+				<option value="sp">São Paulo</option> 
+				<option value="to">Tocantins</option> 
+				</select>
+				</td>
+				</tr>
+				
+				
+				
+				
+				
+				<tr>
+				<td>
+                                    <b><label for="cep">*CEP: </label></b>
+				</td>
+				<td align="left">
+				<input type="text" name="cep" id="cep" >
+				</td>
+				</tr>
+				
+	   			
+ </table>
+                                
+                                
+</fieldset>
+ <br /><br /> 
+
+			<fieldset>
+                            
+				<legend>Contato </legend>
+				<table cellspacing="10">
+				<tr>
+				<td width="121">
+				
+                                    
+                                    
+                                    <b><label > *Telefone principal: </label></b>
+				</td>
+				<td width="300" align="left">
+				<input  size="14" type="text" id="telefone" name="telefone" >
+				</td>
+   
+   
+				<td>
+				<label> Celular </label>
+				</td>
+				<td>
+				<input size="15" type="text" id="celular" name="celular">
+				</td>
+                                    
+                                   
+                               
+                                    
+                                 <td>
+                                <b><label> *Email </label></b>
+				</td>
+				<td>
+				<input  size="50" type="text" name="linkedin">
+				</td>   
+				</tr>
+                                </table>  
+                                
+                                
+                               
+                                
+ 
+                                
+                                
+                                
+                                
+                                
+</fieldset>
+
+
+ <br /><br /> 
+    
+<center>
+    <input type="submit" value="Cadastrar">
+    </center>
+</form>
+
+            </div>           
+    
+
+            
+      
+            
+            
+            
+            
+            
+            
+            
+<!--RODAPÉ DO SITE-->
+<div id="footer">
+<center>
+<h3>ALPHA JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>
+</center>
+</div>
+ 
+ 
+ 
+<script src="VALIDAÇÕES JS/Validar_empresa.js"></script>
+
+</body>
+ 
+ 
+</html>
+
+
+
+
+
+
+
+
+

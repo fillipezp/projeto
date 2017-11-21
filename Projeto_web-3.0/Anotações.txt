@@ -1,0 +1,73 @@
+   Alter table user  add collumn nome_user
+
+
+ALTER TABLE `contato` ADD `id` INT NOT NULL primary key AUTO_INCREMENT;
+
+
+drop table Endereco;
+
+
+CREATE TABLE ENDERECO (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY
+    numero Integer,
+    complemento VARCHAR(100),
+    cep VARCHAR(10) NOT NULL,
+    bairro VARCHAR(100),
+	estado VARCHAR(200),
+    logradouro VARCHAR(200) NOT NULL,
+    id_juridico_fk INTEGER REFERENCES JURIDICO(id_empresa),
+    id_canditato_fk INTEGER REFERENCES CANDIDATO(id_candidato)
+);
+
+
+
+alter table vagas add COLUMN cargo varchar(50) not null;
+
+
+
+
+*********Usuário Administrador do sistema***********
+CREATE USER 'adm'@'localhost' IDENTIFIED BY '1234';  
+
+FLUSH PRIVILEGES;
+
+GRANT
+  ALTER,
+  ALTER ROUTINE,
+  CREATE,
+  CREATE ROUTINE,
+  CREATE TEMPORARY TABLES,
+  CREATE VIEW,
+  DELETE,
+  DROP,
+  EVENT,
+  EXECUTE,
+  INDEX,
+  INSERT,
+  LOCK TABLES,
+  REFERENCES,
+  SELECT,
+  SHOW VIEW,
+  TRIGGER,
+  UPDATE 
+ON
+  `teste`.* 
+TO
+  'adm' @'localhost'; 
+  
+CREATE TABLE `teste`.`usuarios` (
+  `user_id` INT (11) NOT NULL AUTO_INCREMENT COMMENT 'ID do Usuário',
+  `user` VARCHAR (255) NOT NULL COMMENT 'Usuário',
+  `user_name` VARCHAR (255) NOT NULL COMMENT 'Nome do usuário',
+  `user_password` VARCHAR (255) NOT NULL COMMENT 'Senha',
+  PRIMARY KEY (`user_id`)
+);
+
+
+
+
+
+
+
+USAR JQUERY VALIDATE PARA FAZER VALIDAÇÃO DOS FORMULÁRIOS ok
+
