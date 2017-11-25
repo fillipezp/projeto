@@ -3,11 +3,6 @@ create database teste;
 use teste;
 
 
-CREATE TABLE USUARIO (
-    email VARCHAR(50) NOT NULL UNIQUE,
-    senha VARCHAR(32) NOT NULL,
-    id_user INTEGER AUTO_INCREMENT PRIMARY KEY 
-);
 
 CREATE TABLE JURIDICO (
     id_empresa INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -29,21 +24,10 @@ CREATE TABLE CANDIDATO (
     og_exped_uf VARCHAR(10) NOT NULL,
     dt_exp DATE,
     cpf VARCHAR(15) NOT NULL,
-    FK_USER_id_user INTEGER REFERENCES USUARIO(id_user)
+    FK_USER_id_user INTEGER REFERENCES usuarios(user_id)
+
 );
 
-CREATE TABLE ADMIN (
-    id_admin INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    id_user INTEGER REFERENCES USUARIO(id_user)
-);
-
-
-
-CREATE TABLE LOG (
-    data_hora DATE,
-    id_log INT AUTO_INCREMENT PRIMARY KEY,
-    FK_USER_id_user INTEGER REFERENCES USUARIO(id_user)
-);
 
 CREATE TABLE VAGAS (
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -57,15 +41,7 @@ CREATE TABLE VAGAS (
     FK_JURIDICO_id_empresa INTEGER REFERENCES JURIDICO(id_empresa)
 );
 
-CREATE TABLE ESTAGIO (
-    poss_efetivo CHAR(3),
-    disp_turno VARCHAR(10),
-    FK_VAGAS_id INTEGER PRIMARY KEY REFERENCES VAGAS(id)
-);
 
-CREATE TABLE EFETIVO (
-    FK_VAGAS_id INTEGER PRIMARY KEY REFERENCES VAGAS(id)
-);
 
 CREATE TABLE CANDIDATAR (
     FK_VAGAS_id INTEGER REFERENCES VAGAS(id),
@@ -99,4 +75,53 @@ CREATE TABLE ENDERECO (
     id_juridico_fk INTEGER REFERENCES JURIDICO(id_empresa),
     id_canditato_fk INTEGER REFERENCES CANDIDATO(id_candidato)
 );
- 
+
+Alter table user  add collumn nome_user
+ALTER TABLE `contato` ADD `id` INT NOT NULL primary key AUTO_INCREMENT;
+alter table vagas add COLUMN cargo varchar(50) not null;
+
+
+CREATE TABLE `teste`.`usuarios` (
+  `user_id` INT (11) NOT NULL AUTO_INCREMENT COMMENT 'ID do Usuário',
+  `user` VARCHAR (255) NOT NULL COMMENT 'Usuário',
+  `user_name` VARCHAR (255) NOT NULL COMMENT 'Nome do usuário',
+  `user_password` VARCHAR (255) NOT NULL COMMENT 'Senha',
+  PRIMARY KEY (`user_id`)
+
+);
+
+insert into usuarios(user_id, user ,user_name,user_password) values (1, 'adm', 'adm','1234');
+
+drop user 'adm'@'localhost'; 
+CREATE USER 'adm'@'localhost' IDENTIFIED BY '1234';   
+
+
+
+
+
+FLUSH PRIVILEGES;
+
+GRANT
+  ALTER,
+  ALTER ROUTINE,
+  CREATE,
+  CREATE ROUTINE,
+  CREATE TEMPORARY TABLES,
+  CREATE VIEW,
+  DELETE,
+  DROP,
+  EVENT,
+  EXECUTE,
+  INDEX,
+  INSERT,
+  LOCK TABLES,
+  REFERENCES,
+  SELECT,
+  SHOW VIEW,
+  TRIGGER,
+  UPDATE 
+ON
+  `teste`.* 
+TO
+  'adm' @'localhost'; 
+  

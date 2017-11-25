@@ -27,7 +27,24 @@ alter table vagas add COLUMN cargo varchar(50) not null;
 
 
 *********Usuário Administrador do sistema***********
-CREATE USER 'adm'@'localhost' IDENTIFIED BY '1234';  
+
+
+CREATE TABLE `teste`.`usuarios` (
+  `user_id` INT (11) NOT NULL AUTO_INCREMENT COMMENT 'ID do Usuário',
+  `user` VARCHAR (255) NOT NULL COMMENT 'Usuário',
+  `user_name` VARCHAR (255) NOT NULL COMMENT 'Nome do usuário',
+  `user_password` VARCHAR (255) NOT NULL COMMENT 'Senha',
+  PRIMARY KEY (`user_id`)
+);
+
+insert into usuarios(user_id, user ,user_name,user_password) values (1, 'adm', 'adm','1234');
+
+drop user 'adm'@'localhost'; 
+CREATE USER 'adm'@'localhost' IDENTIFIED BY '1234';   
+
+
+
+
 
 FLUSH PRIVILEGES;
 
@@ -55,13 +72,7 @@ ON
 TO
   'adm' @'localhost'; 
   
-CREATE TABLE `teste`.`usuarios` (
-  `user_id` INT (11) NOT NULL AUTO_INCREMENT COMMENT 'ID do Usuário',
-  `user` VARCHAR (255) NOT NULL COMMENT 'Usuário',
-  `user_name` VARCHAR (255) NOT NULL COMMENT 'Nome do usuário',
-  `user_password` VARCHAR (255) NOT NULL COMMENT 'Senha',
-  PRIMARY KEY (`user_id`)
-);
+
 
 
 

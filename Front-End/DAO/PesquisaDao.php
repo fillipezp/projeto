@@ -32,12 +32,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo'<br><a href="../CONTROL/Upload_Curriculos.php"><button>Cadastrar</button></a>'."<br><br><br><br>";
         
         echo'</fieldset>';
-        
-        
-        
-        
-        
-        
+       
     }
 }
 
