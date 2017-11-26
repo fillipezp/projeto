@@ -62,17 +62,48 @@ if ( isset( $_POST ) && ! empty( $_POST ) ) {
 		<meta charset="UTF-8">
 		
 		<title>Login</title>
+                
+                
+                
+                <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>    
+  <script type="text/javascript" src="../../VIEW/VALIDAÇÕES JS/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
+  <script type="text/javascript" src="../../VIEW/VALIDAÇÕES JS/jQuery-Mask-Plugin/dist/jquery.mask.min.js"></script> 
+
+
+<script type="text/javascript">
+    
+jQuery(function($){
+$('#form_usuario').mask("99.999.999/9999-99",{placeholder:" "});
+
+});
+
+
+
+</script>
+            
+                
+                
+               
+                
 	</head>
 	<body>
+            
+            
+              </br></br></br></br></br></br></br></br></br></br></br></br></br>
+            
+        <center>
+            
+            
 		<p>Para editar, apenas digite o nome de usuário que deseja editar.</p>
-		<p><a href="../login.php">Clique aqui</a> para testar.</p>
+                <p><a href="../../VIEW/login_empresa.php">Clique aqui</a> para efetuar o login.</p>
 		<form action="" method="post">
 			<table>
 				<tr>
 					<td>Usuário</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="form_usuario" required></td>
+					<td><input type="text" name="form_usuario" id="form_usuario" required></td>
 				</tr>
 				<tr>
 					<td>Senha</td>
@@ -94,11 +125,12 @@ if ( isset( $_POST ) && ! empty( $_POST ) ) {
 				<?php endif; ?>
 				
 				<tr>
-					<td><input type="submit" value="Entrar"></td>
+					<td><input type="submit" value="Criar novo usuário"></td>
 				</tr>
 			</table>
 		</form>
 		
+        </center>
 	
 	</body>
 </html>

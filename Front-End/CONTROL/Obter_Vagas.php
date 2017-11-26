@@ -6,6 +6,13 @@
 
 <title>Repositório de candidaturas</title>
 <link href="../VIEW/STYLE/formularios.css" rel="stylesheet">
+  
+    
+
+    
+    
+    
+    
     
 </head>
 
@@ -73,6 +80,9 @@ include_once('../CONTROL/login/login_candidato/config.php');
                         echo '<td>' . $fetch['beneficios'] .'</td>';
                         echo '<td>' . $fetch['cargo'] . '</td>';
                         echo '<td> <a style="color:red;" href="?del=' . $fetch['id'] . '">Candidatar-se</a> "</td>';
+                
+                            
+
 			echo '</tr>';	
 		}
 		?>

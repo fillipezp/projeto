@@ -29,7 +29,7 @@ body{
 	bottom: -40px;
 	width: auto;
 	height: auto;
-	background-image: url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
+	background-image: url(IMAGENS/wallpaper.wiki-Office-Business-Park-1920x1080-PIC-WPC008189.jpg);
 	background-size: cover;
 	-webkit-filter: blur(5px);
 	z-index: 0;
@@ -157,6 +157,24 @@ body{
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
+  
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>    
+  <script type="text/javascript" src="VALIDAÇÕES JS/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
+  <script type="text/javascript" src="VALIDAÇÕES JS/jQuery-Mask-Plugin/dist/jquery.mask.min.js"></script>   
+
+
+<script type="text/javascript">
+    
+jQuery(function($){
+$('#Usuário').mask("99.999.999/9999-99",{placeholder:" "});
+});
+
+
+
+</script>
+  
+  
  
 		<meta charset="UTF-8">
 		
@@ -174,7 +192,7 @@ body{
                 
                 <center>
 		<div class="login">
-				<input type="text" placeholder="Usuário" name="usuario" required> <br>
+				<input type="text"  placeholder="Usuário"  name="usuario" id="Usuário" required> <br>
 				<input type="password" placeholder="Senha" name="senha" required><br>
                              
                                 
@@ -191,23 +209,7 @@ body{
 		</div>
                       </center>
                                 
-                        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-				
-				<tr>
-                                    <td><a href="../CONTROL/cria-user-empregador/">Criar usuário</a></td>
-				</tr>
-				
-				<?php if ( ! empty( $_SESSION['login_erro'] ) ) :?>
-					<tr>
-						<td style="color: red;"><?php echo $_SESSION['login_erro'];?></td>
-						<?php $_SESSION['login_erro'] = ''; ?>
-					</tr>
-				<?php endif; ?>
-				
-				<tr>
-					<td><input type="submit" value="Entrar"></td>
-				</tr>
+                     
 			</table>
 		</form>
 	</body>
