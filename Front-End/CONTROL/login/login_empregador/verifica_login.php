@@ -1,4 +1,6 @@
 <?php
+
+
 // Verifica se estamos conectados ao BD
 if ( ! isset( $conexao_pdo ) || ! is_object( $conexao_pdo ) ) {
 	exit('Erro na conexão com o banco de dados.');
@@ -55,4 +57,10 @@ if (
                 
 	}
 }
+
+    
+    
+
+
+
 ?>

@@ -1,13 +1,18 @@
 <?php
 
+require_once  ('../DAO/VagaDAO.php');
+require_once ('../MODEL/Vaga.php');
+require_once './login/login_empregador/CNPJ_id.php';
 
-require_once '../MODEL/Vaga.php';
-require_once '../DAO/VagaDAO.php';
+ class ObterVaga {
+   
+     
+     
+ function ObterVagaDados($id) {
+     
+$vaga = new Vaga1();
 
-class ObterVaga {
-  
-public function ObterVagaDados() {
-$vaga = new Vaga();
+
 
 $atividade   = $_POST['atividade'];
 $cargo       = $_POST['cargo'];   
@@ -26,10 +31,12 @@ $vaga ->setN_vagas($nvagas);
 $vaga ->setHorario($horario);
 
 
-
+     
+if ($vaga!= null){      
 $enviar = new VagaDAO();
-$enviar->Insere($vaga);
+$enviar->Insere($vaga, $id);
 
+}      
 
 }
 
@@ -37,3 +44,5 @@ $enviar->Insere($vaga);
 }
 $executar = new ObterVaga();
 $executar->ObterVagaDados();
+
+?>

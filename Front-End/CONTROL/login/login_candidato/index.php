@@ -11,6 +11,14 @@ include('./verifica_login.php');
 //include('./redirect.php');
 
 
+// Envia o CPF do candidato para ser vinculado junto a vaga que ele se candidatar
+
+include_once './Envia_CPF.php';
+
+$cpf = $_POST['usuario'];
+$obj = new captura_cpf();
+$obj->captura($cpf);
+
 
 
 

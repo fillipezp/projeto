@@ -181,7 +181,7 @@ $('#Usuário').mask("99.999.999/9999-99",{placeholder:" "});
 		<title>Login</title>
 	</head>
 	<body>
-            <form action="../CONTROL/login/login_empregador/" method="post">
+            <form action="../CONTROL/login/login_empregador/index.php" method="post">
 			<table>
 				<div class="body"></div>
 		<div class="grad"></div>

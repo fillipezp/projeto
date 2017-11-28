@@ -11,17 +11,29 @@ include('./verifica_login.php');
 //include('./redirect.php');
 
 
+require_once '../login_empregador/CNPJ_id.php';
+
+$cnpj = $_POST['usuario'];
+$obj = new Transforma_cnpj_id();
+$obj->recebe($cnpj);
+
 ?>
 
-Olá <b><?php echo $_SESSION['nome_usuario']?></b>, <a href="sair.php">clique aqui</a> para sair.
 
+
+
+Olá <b><?php 
+
+
+
+echo $_SESSION['nome_usuario']?></b>, <a href="sair.php">clique aqui</a> para sair.
+;
 
 <?php if ( $_SESSION['logado'] === true ) {
-	  header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/MAIN_empregador.html');
+ header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/MAIN_empregador.html');
 }else{
     
     
-    header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/login_empresa.php'); 
+  header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/login_empresa.php'); 
 }
 
-?>

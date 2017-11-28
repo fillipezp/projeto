@@ -5,7 +5,7 @@
     require_once '../MODEL/User_Candidato.php';
 
 	
-   class CandidatoDAO extends Connect {
+class CandidatoDAO extends Connect {
                 
  public function Insere(candidato $dados ){
      
@@ -26,6 +26,7 @@ try {
                        ));  
   
   $fk =  $pdo->lastInsertId();
+
 
 $enviar = new ObterCandidato();
 $enviar->ObterCandidato_Endereco($fk);
@@ -70,6 +71,9 @@ $enviar->ObterCandidato_Endereco($fk);
             return $result;
 		
         }
+        
+        
+        
 		
 
 		 public function getALL_Names_Masculino() {
@@ -114,6 +118,12 @@ $enviar->ObterCandidato_Endereco($fk);
         $rows = $result->fetchAll( PDO::FETCH_ASSOC );
 		
         }
+        
+        
+        
+        
+        
+        
 		
 		
 

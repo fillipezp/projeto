@@ -2,7 +2,7 @@
 
 
 
-    class Vaga {
+class Vaga1{
 	
 private $id;
 private $n_vagas;
@@ -12,6 +12,7 @@ private $remun;
 private $atividades;
 private $beneficios;
 private $cargo;	
+
 
 	public function getId(){
 		return $this->id;
@@ -81,4 +82,3 @@ private $cargo;
 }
 
 
-?>

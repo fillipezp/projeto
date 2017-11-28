@@ -195,7 +195,7 @@ $('#Usuário').mask("000.000.000-00",{placeholder:" "});
             
         <center>
             
-            <form action="../CONTROL/login/login_candidato/" method="post">
+            <form action="../CONTROL/login/login_candidato/index.php" method="post">
 			<table>
 				<div class="body"></div>
 		<div class="grad"></div>

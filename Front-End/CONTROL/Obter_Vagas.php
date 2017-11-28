@@ -45,6 +45,11 @@
             
             <center>
 <?php 
+
+error_reporting(0);
+ini_set(“display_errors”, 0 );
+       
+
 include_once('../CONTROL/login/login_candidato/config.php');
 	
 
@@ -93,22 +98,45 @@ include_once('../CONTROL/login/login_candidato/config.php');
                 
        
                    <?php
-             if ( isset( $_GET['del'] ) ) {
-	$pdo_insere = $conexao_pdo->prepare('Insert into candidatar values(?,60)');
-	$pdo_insere->execute( array( (int)$_GET['del'] ) );
+
+              
+       class Recebe{
+           
+       function recebe(int $doc){
+       $cpf = $doc;    
+       }
+       }
+       
+
+
+       $cpf = $_POST['$cpf'];
+       $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
+       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+       $search = $cpf;
+       $sql = "SELECT id_candidato FROM CANDIDATO WHERE cpf LIKE '%" . $search . "%'";
+       $result = $pdo->query($sql);
+       $rows = $result->fetch( PDO::FETCH_ASSOC );
+       $id = $rows['id_candidato'];
+   
+       
+         
+                
+       
+       
+        if ( isset( $_GET['del'] ) ) {
+	$pdo_insere = $conexao_pdo->prepare('Insert into candidatar values(?,?)');
+	$pdo_insere->execute( array( (int)$_GET['del'],
+                                     (int)$id ));
 	
-	// Redireciona para o index.php
+        // Redireciona para o index.php
 	header('location: ../CONTROL/Obter_Vagas.php');
 }
                 ?>
                 
                 
     
-    
-   
-    
-    
-                
+  
 		</table>
     
     
