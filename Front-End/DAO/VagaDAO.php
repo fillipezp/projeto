@@ -1,5 +1,5 @@
 <?php
-  
+  /*
      include 'ConexaoDao.php';
      require_once  '../MODEL/Vaga.php';
     
@@ -59,4 +59,4 @@
 	
    } 	
 
- ?>    
+ ?>    */

@@ -1,6 +1,6 @@
 <?php
 
-require_once  ('../DAO/VagaDAO.php');
+/*require_once  ('../DAO/VagaDAO.php');
 require_once ('../MODEL/Vaga.php');
 require_once './login/login_empregador/CNPJ_id.php';
 
@@ -45,4 +45,6 @@ $enviar->Insere($vaga, $id);
 $executar = new ObterVaga();
 $executar->ObterVagaDados();
 
-?>
+?
+ * >
+ */

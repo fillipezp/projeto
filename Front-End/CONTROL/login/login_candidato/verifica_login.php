@@ -51,6 +51,13 @@ if (
 		$_SESSION['login_erro'] = 'Usuário ou senha inválidos';
                 
                 
+    
+require './Envia_CPF.php';
+$cpf = $_SESSION['usuario'];
+$obj = new captura_cpf();
+$obj->captura($cpf);
+
+
                 
                 
 	}

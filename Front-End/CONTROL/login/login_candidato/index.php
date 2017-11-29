@@ -13,13 +13,6 @@ include('./verifica_login.php');
 
 // Envia o CPF do candidato para ser vinculado junto a vaga que ele se candidatar
 
-include_once './Envia_CPF.php';
-
-$cpf = $_POST['usuario'];
-$obj = new captura_cpf();
-$obj->captura($cpf);
-
-
 
 
 ?>
@@ -29,6 +22,10 @@ Olá <b><?php echo $_SESSION['nome_usuario']?></b>, <a href="sair.php">clique aq
 
 <?php if ( $_SESSION['logado'] === true ) {
 	  header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/main_candidato.html');
+          
+          
+
+
 }else{
     
     

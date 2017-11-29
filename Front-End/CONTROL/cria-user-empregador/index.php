@@ -1,4 +1,10 @@
 <?php
+
+
+error_reporting(0);
+ini_set(“display_errors”, 0 );
+       
+
 // Inclui o arquivo de configuração
 include('../login/login_empregador/config.php');
 
