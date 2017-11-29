@@ -91,6 +91,8 @@ include_once('../CONTROL/login/login_candidato/config.php');
                
               <?php
        class Recebe{
+          
+        
            
        function recebe(int $doc){
        $cpf = $doc;    

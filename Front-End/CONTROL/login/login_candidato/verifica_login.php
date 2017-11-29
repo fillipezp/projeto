@@ -1,4 +1,5 @@
 <?php
+
 // Verifica se estamos conectados ao BD
 if ( ! isset( $conexao_pdo ) || ! is_object( $conexao_pdo ) ) {
 	exit('Erro na conexão com o banco de dados.');
@@ -40,9 +41,10 @@ if (
 		$_SESSION['usuario']      = $fetch_usuario['user'];
 		$_SESSION['user_id']      = $fetch_usuario['user_id'];
                 
-           
                 
                 
+
+       
 	} else {
 		// Continua deslogado
 		$_SESSION['logado']     = false;
@@ -50,16 +52,17 @@ if (
 		// Preenche o erro para o usuário
 		$_SESSION['login_erro'] = 'Usuário ou senha inválidos';
                 
-                
-    
-require './Envia_CPF.php';
+/*
+                require_once './Envia_CPF.php';                
 $cpf = $_SESSION['usuario'];
 $obj = new captura_cpf();
 $obj->captura($cpf);
-
+ 
+ */
+}
 
                 
                 
-	}
+	
 }
 ?>

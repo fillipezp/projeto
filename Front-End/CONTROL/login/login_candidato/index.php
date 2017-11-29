@@ -15,6 +15,13 @@ include('./verifica_login.php');
 
 
 
+
+    
+    
+
+
+
+
 ?>
 
 Olá <b><?php echo $_SESSION['nome_usuario']?></b>, <a href="sair.php">clique aqui</a> para sair.
@@ -23,13 +30,15 @@ Olá <b><?php echo $_SESSION['nome_usuario']?></b>, <a href="sair.php">clique aq
 <?php if ( $_SESSION['logado'] === true ) {
 	  header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/main_candidato.html');
           
-          
+
 
 
 }else{
     
+    header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/login_candidato.php');
     
-    header('location: ' . dirname( $_SERVER['PHP_SELF'] ) . '../../../../VIEW/login_candidato.php'); 
+    
 }
+
 
 ?>
