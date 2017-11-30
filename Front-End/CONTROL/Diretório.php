@@ -9,7 +9,8 @@
     
 </head>
 
-	<body>
+	    <body background="../VIEW/IMAGENS/E280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACwhite-background-hd-wallpapers-and-images.jpg">
+
 
             <meta charset="utf-8"/>
             
@@ -32,7 +33,7 @@
  $path = "../CURRICULOS/";
    $diretorio = dir($path);
 
-    echo "Repositório de candidaturas <br/>";    
+    echo "Repositório de currículos <br/>";    
    while($arquivo = $diretorio -> read()){
        
        

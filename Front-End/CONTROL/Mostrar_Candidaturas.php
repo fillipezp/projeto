@@ -177,7 +177,7 @@ require_once('../CONTROL/login/login_empregador/verifica_login.php');
                     
                     
                     
-                    
+                    <a href="Diretório.php">Visualizar currículos</a>
                     
                     
     

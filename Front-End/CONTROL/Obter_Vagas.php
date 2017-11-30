@@ -120,6 +120,12 @@ include_once('../CONTROL/login/login_candidato/config.php');
     
   
 		    </table>
+                    
+                
+               </br></br>     
+                Após clicar em candidatar-se , clique em enviar currículo.
+                </br></br></br></br>
+                <a href="Upload_Curriculos.php">Enviar currículo</a>
     
     
 </center>
@@ -134,11 +140,11 @@ include_once('../CONTROL/login/login_candidato/config.php');
          
          
 <!--RODAPÉ DO SITE-->
-<div id="footer">
+
 <center>
 <h3>ALPHA JOBS TECNOLOGIA EM EMPREGOS - AV. PRAIA DE BELAS,  425 CEP: 94485-325 PORTO ALEGRE/RS © Copyright 2017</h3>
 </center>
-</div>
+
             
             
             
