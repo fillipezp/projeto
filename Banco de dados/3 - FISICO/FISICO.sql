@@ -53,7 +53,8 @@ CREATE TABLE CONTATO (
     residencial VARCHAR(20) NOT NULL,
     celular VARCHAR(20),
     linkedin VARCHAR(100),
-    FK_USER_id_user INTEGER REFERENCES USUARIO(id_user)
+    FK_USER_id_candidato INTEGER REFERENCES CANDIDATO(id_candidato),
+    id_juridico_fk INTEGER REFERENCES JURIDICO(id_empresa)
 );
 
 CREATE TABLE FORMACAO (

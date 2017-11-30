@@ -19,7 +19,7 @@ $dtnascimento = $_POST['data'];
 $estado_civil = $_POST['estado_civil'];	
 $rg = $_POST ['rg'];	
 $dt_expedicao = $_POST['dt_exp'];		
-$cpf = $_POST ['cep'];
+$cpf = $_POST ['cpf'];
 $og_expedidor = $_POST['og_expedidor'];
 
 $candidato->setNome_completo($nome_candidato);
@@ -65,7 +65,7 @@ $enviar->Insere($end);
 
 
 
-public function ObterCandidato_Contato(){
+public function ObterCandidato_Contato(int $chave){
 $con = new Contato();
  	
 $residencial = $_POST['telefone'];
@@ -75,6 +75,9 @@ $linkedin = $_POST ['linkedin'];
 $con ->setResidencial($residencial);
 $con ->setCelular($celular);
 $con->setLinkedin($linkedin);
+$con->setFk_candidato($chave);
+        
+        
 
 $enviar = new ContatoDao_Candidato();
 $enviar->Insere($con);

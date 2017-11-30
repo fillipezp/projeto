@@ -15,7 +15,8 @@
     
     
 
-	<body>
+   <body background="../VIEW/IMAGENS/E280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACE280ACwhite-background-hd-wallpapers-and-images.jpg">
+
 
                  <meta charset="utf-8"/>
             
@@ -90,18 +91,10 @@ include_once('../CONTROL/login/login_candidato/config.php');
                  
                
               <?php
-       class Recebe{
-          
-        
-           
-       function recebe(int $doc){
-       $cpf = $doc;    
-       }
-       }
+       require_once './login/login_candidato/verifica_login.php';
+    
+       $cpf = $_SESSION['usuario'];
        
-
-
-       $cpf = $_POST['$cpf'];
        $pdo = new PDO('mysql:host=localhost;dbname=teste', 'root' ,'' );
        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
@@ -119,7 +112,7 @@ include_once('../CONTROL/login/login_candidato/config.php');
                                      (int)$id ));
 	
         // Redireciona para o index.php
-	header("Refresh: 10");
+	header('location: ../CONTROL/Obter_Vagas.php');
 }
               
               ?>  

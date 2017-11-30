@@ -26,13 +26,15 @@ $fk =  $pdo->lastInsertId();
 
 $enviar = new ObterEmpresa();
 $enviar->ObterEmpresa_Endereco($fk);
+$enviar->ObterEmpresa_Contato($fk);
 
- echo '<script type="text/javascript">
+
+echo '<script type="text/javascript">
             alert("Salvo com Sucesso !");
             window.history.go(-2);
         </script>';
  
- 
+
 
  
 

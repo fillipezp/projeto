@@ -7,6 +7,10 @@ if ( ! isset( $conexao_pdo ) || ! is_object( $conexao_pdo ) ) {
 }
 
 // Une $_SESSION e $POST para verificação
+
+
+
+
 if ( isset( $_POST ) && ! empty( $_POST ) ) {
 	$dados_usuario = $_POST;
 } else {
@@ -33,6 +37,10 @@ if (
 	
 	// Busca os dados da linha encontrada
 	$fetch_usuario = $pdo_checa_user->fetch();
+        
+        
+      
+        
 	
 	// Verifica se a senha do usuário está correta
 	if ( crypt( $dados_usuario['senha'], $fetch_usuario['user_password'] ) === $fetch_usuario['user_password'] ) {

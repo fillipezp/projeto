@@ -62,9 +62,7 @@ $enviar->Insere($end);
 }
 
 
-
-
-public function ObterEmpresa_Contato(){
+public function ObterEmpresa_Contato(int $chave){
 $con = new Contato();
  	
 $residencial = $_POST['telefone'];
@@ -74,6 +72,7 @@ $linkedin = $_POST ['linkedin'];
 $con ->setResidencial($residencial);
 $con ->setCelular($celular);
 $con->setLinkedin($linkedin);
+$con->setFk_empresa($chave);
 
 $enviar = new ContatoDao_Empresa();
 $enviar->Insere($con);

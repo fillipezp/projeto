@@ -52,13 +52,12 @@ if (
 		// Preenche o erro para o usuário
 		$_SESSION['login_erro'] = 'Usuário ou senha inválidos';
                 
-/*
-                require_once './Envia_CPF.php';                
+            require_once './Envia_CPF.php';                
 $cpf = $_SESSION['usuario'];
 $obj = new captura_cpf();
 $obj->captura($cpf);
  
- */
+
 }
 
                 

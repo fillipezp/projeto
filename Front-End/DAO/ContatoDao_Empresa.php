@@ -17,10 +17,11 @@ try {
 
   echo $dados->getResidencial();
   
-  $stmt = $pdo->prepare('INSERT INTO CONTATO(celular,residencial,linkedin)VALUES(:celular,:telefone,:linkedin)');
+  $stmt = $pdo->prepare('INSERT INTO CONTATO(celular,residencial,linkedin,id_juridico_fk)VALUES(:celular,:telefone,:linkedin,:id_juridico_fk)');
   $stmt->execute(array(':celular'   => $dados->getCelular(), 
                        ':telefone'  => $dados->getResidencial(),
-                       ':linkedin'  => $dados->getLinkedin()));                                        
+                       ':linkedin'  => $dados->getLinkedin(),
+                       ':id_juridico_fk' => $dados->getFk_empresa()));                                        
 } catch(PDOException $e) {
   echo 'Error: ' . $e->getMessage();
   

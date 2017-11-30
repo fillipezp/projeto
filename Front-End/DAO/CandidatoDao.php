@@ -30,7 +30,8 @@ try {
 
 $enviar = new ObterCandidato();
 $enviar->ObterCandidato_Endereco($fk);
-  
+$enviar->ObterCandidato_Contato($fk);
+ 
   
   
   
