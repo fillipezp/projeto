@@ -19,7 +19,7 @@ CREATE TABLE CANDIDATO (
     nome_completo VARCHAR(200) NOT NULL,
     sexo CHAR(1) NOT NULL,
     estado_civil VARCHAR(15) NOT NULL,
-    dt_nascimento DATE NOT NULL,
+    dt_nascimento VARCHAR(15) NOT NULL,
     rg VARCHAR(15) NOT NULL,
     og_exped_uf VARCHAR(10) NOT NULL,
     dt_exp DATE,
@@ -34,7 +34,7 @@ CREATE TABLE VAGAS (
     n_vagas INTEGER,
     horario VARCHAR(30),
     c_hora INTEGER,
-    remun DECIMAL(4,2),
+    remun DECIMAL(10,2),
     atividades VARCHAR(300) NOT NULL,
     beneficios VARCHAR(300),
 
@@ -46,7 +46,7 @@ CREATE TABLE VAGAS (
 CREATE TABLE CANDIDATAR (
     FK_VAGAS_id INTEGER REFERENCES VAGAS(id),
     FK_CANDIDATO_id_candidato INTEGER REFERENCES CANDIDATO(id_candidato),
-    PRIMARY KEY (FK_VAGAS_id, FK_CANDIDATO_ENDERECO_id_candidato) 
+    PRIMARY KEY (FK_VAGAS_id, FK_CANDIDATO_id_candidato) 
 );
 
 CREATE TABLE CONTATO (
@@ -66,18 +66,19 @@ CREATE TABLE FORMACAO (
 );
 
 CREATE TABLE ENDERECO (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     numero Integer,
     complemento VARCHAR(100),
     cep VARCHAR(10) NOT NULL,
     bairro VARCHAR(100),
-	estado VARCHAR(200),
+    cidade VARCHAR(100),
+    estado VARCHAR(200),
     logradouro VARCHAR(200) NOT NULL,
     id_juridico_fk INTEGER REFERENCES JURIDICO(id_empresa),
     id_canditato_fk INTEGER REFERENCES CANDIDATO(id_candidato)
 );
 
-Alter table user  add collumn nome_user
+
 ALTER TABLE `contato` ADD `id` INT NOT NULL primary key AUTO_INCREMENT;
 alter table vagas add COLUMN cargo varchar(50) not null;
 

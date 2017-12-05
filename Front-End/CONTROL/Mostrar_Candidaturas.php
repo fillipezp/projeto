@@ -124,7 +124,7 @@ require_once('../CONTROL/login/login_empregador/verifica_login.php');
                 $search = $_SESSION['usuario']; 
 
                 
-                $pdo_verifica = $conexao_pdo->prepare("select a.nome_completo,a.cpf,b.residencial,b.celular,d.id,d.cargo,d.remun from candidato a inner join contato b on a.id_candidato=b.FK_USER_id_candidato inner join candidatar c on c.FK_CANDIDATO_ENDERECO_id_candidato = a.id_candidato inner join vagas d on d.id=c.FK_VAGAS_id  inner join juridico e on e.id_empresa= d.FK_JURIDICO_id_empresa where d.FK_JURIDICO_id_empresa=e.id_empresa and e.cnpj like '%" . $search . "%'");
+                $pdo_verifica = $conexao_pdo->prepare("select a.nome_completo,a.cpf,b.residencial,b.celular,d.id,d.cargo,d.remun from candidato a inner join contato b on a.id_candidato=b.FK_USER_id_candidato inner join candidatar c on c.FK_CANDIDATO_id_candidato = a.id_candidato inner join vagas d on d.id=c.FK_VAGAS_id  inner join juridico e on e.id_empresa= d.FK_JURIDICO_id_empresa where d.FK_JURIDICO_id_empresa=e.id_empresa and e.cnpj like '%" . $search . "%' order by d.id");
 		$pdo_verifica->execute();
                 
       
