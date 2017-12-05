@@ -5,7 +5,7 @@
 <body>
 
 <?php 
-include_once('../CONTROL/login/config.php');
+include_once('./CONTROL/login/login_candidato/config.php');
 	
 
 		$pdo_verifica = $conexao_pdo->prepare('SELECT * FROM usuarios ORDER BY user_id DESC');

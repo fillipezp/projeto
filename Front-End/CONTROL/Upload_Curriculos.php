@@ -15,7 +15,7 @@
    
       <div id='cssmenu'>
 	<ul>
-            <li class='active'><a href="../VIEW/BuscarVagas.html">Voltar</a></li>
+            <li class='active'><a href="../CONTROL/Obter_Vagas.php">Voltar</a></li>
             
             
     </ul>
